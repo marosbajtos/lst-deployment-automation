@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.func:ModuleFunctions
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.func="http:///com/whitestein/lsps/modeler/func.ecore"
+    xmi:id="_ADMmwKotEeSQe8Lxo5LlkA">
+  <functions
+      xmi:id="_AP3w0KotEeSQe8Lxo5LlkA"
+      name="editEnabled"
+      type="Boolean">
+    <parameters
+        xmi:id="_BbRM8KotEeSQe8Lxo5LlkA"
+        name="edited"
+        parameterType="Object"/>
+    <parameters
+        xmi:id="_Dml1AKotEeSQe8Lxo5LlkA"
+        name="iterator"
+        parameterType="Object"/>
+    <expression>edited = null</expression>
+  </functions>
+  <functions
+      xmi:id="_KciZIKotEeSQe8Lxo5LlkA"
+      name="saveEnabled"
+      type="Boolean">
+    <parameters
+        xmi:id="_KciZIaotEeSQe8Lxo5LlkA"
+        name="edited"
+        parameterType="Object"/>
+    <parameters
+        xmi:id="_KciZIqotEeSQe8Lxo5LlkA"
+        name="iterator"
+        parameterType="Object"/>
+    <expression>edited = iterator</expression>
+  </functions>
+  <functions
+      xmi:id="_ONosMKotEeSQe8Lxo5LlkA"
+      name="cancelEnabled"
+      type="Boolean">
+    <parameters
+        xmi:id="_ONosMaotEeSQe8Lxo5LlkA"
+        name="edited"
+        parameterType="Object"/>
+    <parameters
+        xmi:id="_ONosMqotEeSQe8Lxo5LlkA"
+        name="iterator"
+        parameterType="Object"/>
+    <expression>edited = iterator</expression>
+  </functions>
+  <functions
+      xmi:id="_Oo6S8KotEeSQe8Lxo5LlkA"
+      name="removeEnabled"
+      type="Boolean">
+    <parameters
+        xmi:id="_Oo6S8aotEeSQe8Lxo5LlkA"
+        name="edited"
+        parameterType="Object"/>
+    <parameters
+        xmi:id="_Oo6S8qotEeSQe8Lxo5LlkA"
+        name="iterator"
+        parameterType="Object"/>
+    <expression>edited = null</expression>
+  </functions>
+  <functions
+      xmi:id="_p5VXMKotEeSQe8Lxo5LlkA"
+      name="readOnly"
+      type="Boolean">
+    <parameters
+        xmi:id="_p5VXMaotEeSQe8Lxo5LlkA"
+        name="edited"
+        parameterType="Object"/>
+    <parameters
+        xmi:id="_p5VXMqotEeSQe8Lxo5LlkA"
+        name="iterator"
+        parameterType="Object"/>
+    <expression>edited != iterator</expression>
+  </functions>
+  <functions
+      xmi:id="_JmaiEKowEeSQe8Lxo5LlkA"
+      name="applyReadOnly"
+      type="UIComponent">
+    <parameters
+        xmi:id="_M_0G0KowEeSQe8Lxo5LlkA"
+        name="component"
+        parameterType="UIComponent"/>
+    <parameters
+        xmi:id="_OuPXgKowEeSQe8Lxo5LlkA"
+        name="readOnlyCondition"
+        parameterType="{:Boolean}"/>
+    <expression><![CDATA[if isInstance(component, type(InputComponent)) then
+	def {:Boolean} origReadOnlyCondition := (component as InputComponent).readOnly;
+	if origReadOnlyCondition = null then
+		(component as InputComponent).readOnly := readOnlyCondition
+	else
+		(component as InputComponent).readOnly := {-> readOnlyCondition() or origReadOnlyCondition()}
+	end
+end;
+
+component]]></expression>
+  </functions>
+  <functions
+      xmi:id="_WiBc4KowEeSQe8Lxo5LlkA"
+      name="traverseComponentTree"
+      type="UIComponent">
+    <parameters
+        xmi:id="_Z1BesKowEeSQe8Lxo5LlkA"
+        name="componentTreeRoot"
+        parameterType="UIComponent"/>
+    <parameters
+        xmi:id="_bJD5cKowEeSQe8Lxo5LlkA"
+        name="transformation"
+        parameterType="{UIComponent:Object}"/>
+    <expression><![CDATA[transformation(componentTreeRoot);
+
+switch typeOf(componentTreeRoot)
+	case type(Container) -> traverseComponentTree((componentTreeRoot as Container).child, transformation)
+	case type(ViewModel) -> traverseComponentTree((componentTreeRoot as ViewModel).child, transformation)
+	case type(Conditional) -> traverseComponentTree((componentTreeRoot as Conditional).child, transformation)
+	case type(TableColumn) -> traverseComponentTree((componentTreeRoot as TableColumn).content, transformation)
+	case type(HorizontalLayout) ->
+		foreach UIComponent c in (componentTreeRoot as HorizontalLayout).children do
+			traverseComponentTree(c, transformation)
+		end
+	case type(VerticalLayout) ->
+		foreach UIComponent c in (componentTreeRoot as VerticalLayout).children do
+			traverseComponentTree(c, transformation)
+		end
+end]]></expression>
+  </functions>
+</com.whitestein.lsps.modeler.func:ModuleFunctions>

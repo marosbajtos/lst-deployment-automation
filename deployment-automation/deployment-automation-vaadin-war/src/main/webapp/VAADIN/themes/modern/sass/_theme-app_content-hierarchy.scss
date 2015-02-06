@@ -1,0 +1,21 @@
+$theme_content-hierarchy_highlight_background_color: #FAE08E !default;
+$theme_content-hierarchy_grayed_text_color: $theme__grayed_text_color !default;
+$theme_content-hierarchy_grayed_text_size_penalty: 2px !default;
+$theme_content-hierarchy_emphasized_text_size_gain: 4px !default;
+
+@mixin theme-app-content-hierarchy{
+	.l-highlighted{
+		background: $theme_content-hierarchy_highlight_background_color;
+	}
+
+	.l-emphasized{
+		font-size: $theme_typography_font_size + $theme_content-hierarchy_emphasized_text_size_gain;
+		font-weight: 100;
+		color: $theme__accent_color;
+	}
+
+	.l-grayed{
+		font-size: $theme_typography_font_size - $theme_content-hierarchy_grayed_text_size_penalty;
+		color: $theme_content-hierarchy_grayed_text_color;
+	}
+}

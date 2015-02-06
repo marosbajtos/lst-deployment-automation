@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_q_SyIKx8EeSjyY2D8HPWww"
+    name="popupTemplate"
+    newUI="true">
+  <parameters
+      xmi:id="_ulNI4Kx8EeSjyY2D8HPWww"
+      name="buttonLabel"
+      parameterType="{:String}"/>
+  <parameters
+      xmi:id="_78XZcKyLEeSjyY2D8HPWww"
+      name="popupTitle"
+      parameterType="{:String}"/>
+  <parameters
+      xmi:id="_v-eo8Kx8EeSjyY2D8HPWww"
+      name="popupContent"
+      parameterType="UIComponent"/>
+  <parameters
+      xmi:id="_-LEDcKx8EeSjyY2D8HPWww"
+      name="okExpression"
+      parameterType="{:Object}"/>
+  <parameters
+      xmi:id="_BpiVcKx9EeSjyY2D8HPWww"
+      name="cancelExpression"
+      parameterType="{:Object}"/>
+  <parameters
+      xmi:id="_mw2w4Kx-EeSjyY2D8HPWww"
+      name="persist"
+      parameterType="{:Boolean}"/>
+  <parameters
+      xmi:id="_nzrf0Kx-EeSjyY2D8HPWww"
+      name="navigation"
+      parameterType="{:Navigation}"/>
+  <parameters
+      xmi:id="_qxkzUKyJEeSjyY2D8HPWww"
+      name="refreshComponents"
+      parameterType="{:Set&lt;UIComponent>}"/>
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdViewModel"
+      xmi:id="_EQxdcKx9EeSjyY2D8HPWww"
+      componentID="$VIEW_MODEL">
+    <child
+        xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+        xmi:id="_EbCzwKx9EeSjyY2D8HPWww">
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+          xmi:id="_EbEB4Kx9EeSjyY2D8HPWww">
+        <listeners
+            xmi:id="_EbEB4ax9EeSjyY2D8HPWww"
+            listenerType="ACTION_LISTENER"
+            refresh="$POPUP">
+          <handle>show := true</handle>
+        </listeners>
+        <text>buttonLabel()</text>
+      </components>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdPopup"
+          xmi:id="_EbEB4qx9EeSjyY2D8HPWww"
+          componentID="$POPUP">
+        <child
+            xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+            xmi:id="_EbEB46x9EeSjyY2D8HPWww">
+          <components
+              xsi:type="com.whitestein.lsps.modeler.form:NfdExpression"
+              xmi:id="_EbEB5Kx9EeSjyY2D8HPWww">
+            <expression>popupContent</expression>
+          </components>
+          <components
+              xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+              xmi:id="_EbEB5ax9EeSjyY2D8HPWww"
+              horizontal="true">
+            <components
+                xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+                xmi:id="_Gcu-sKx9EeSjyY2D8HPWww">
+              <listeners
+                  xmi:id="_LgIAEKx9EeSjyY2D8HPWww"
+                  definedByExpression="true">
+                <listenerExpression><![CDATA[new ActionListener(
+	refresh -> { e -> 
+		if refreshComponents != null then 
+			add(refreshComponents(), $POPUP)
+		else
+			{$POPUP}
+		end
+	},
+	executionContext -> $POPUP,
+	actions -> {
+		e -> compact([
+			new ViewModelAction(mergeViewModel -> { -> {$VIEW_MODEL}}),
+		
+			//persist
+			if persist != null and persist() = true then new PersistAction() end,
+			
+			//navigate
+			new NavigationAction(navigation -> { -> 
+				navigation != null ? navigation() : null;
+			 })
+		])
+	} ,
+	handle ->  { e-> 
+						show:=false;
+						if okExpression != null then okExpression() end
+				}
+)]]></listenerExpression>
+              </listeners>
+              <text><![CDATA["Ok"]]></text>
+            </components>
+            <components
+                xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+                xmi:id="_GzIFcKx9EeSjyY2D8HPWww">
+              <listeners
+                  xmi:id="_ONch8Kx9EeSjyY2D8HPWww"
+                  definedByExpression="true">
+                <listenerExpression><![CDATA[new ActionListener(
+	refresh -> { e -> 
+		if refreshComponents != null then 
+			add(refreshComponents(), $POPUP)
+		else
+			{$POPUP}
+		end
+	
+	},
+	executionContext -> $POPUP,
+	actions -> {
+		e -> [new ViewModelAction(clearViewModel -> { -> {$VIEW_MODEL}})]
+	} ,
+	handle ->  { e-> 
+						show:=false;
+						if cancelExpression != null then cancelExpression() end
+				}
+)]]></listenerExpression>
+              </listeners>
+              <text><![CDATA["Cancel"]]></text>
+            </components>
+          </components>
+        </child>
+        <title>popupTitle()</title>
+        <show>show</show>
+      </components>
+    </child>
+  </formItem>
+  <variables
+      xmi:id="_8oigwKx8EeSjyY2D8HPWww"
+      name="show"
+      variableType="Boolean">
+    <initialValueExpression>false</initialValueExpression>
+  </variables>
+</com.whitestein.lsps.modeler.form:FormDefinition>

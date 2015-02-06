@@ -1,0 +1,9 @@
+@mixin theme-app-content-layout{
+	.layout-horizontal{
+		.v-select-option{
+			display: inline-block;
+			padding-right: 6px;
+		}
+	}
+  	.v-browserframe > iframe { display: block; }
+}

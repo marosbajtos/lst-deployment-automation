@@ -1,0 +1,168 @@
+@mixin theme-app-calendarwidget{
+	//	additional for calendar component
+	.v-calendar{
+		overflow: hidden;
+
+		& > tbody > tr:nth-child(2) > td:first-child{		//	terrible hack to fix wierd Vaadin rendering of small calendars
+			width: 21px;
+		}
+	}
+
+	.l-calendarWidget{
+		.v-slot{
+			overflow: visible;
+		}
+
+		.v-calendar-header-month{						//	terrible hack to fix wierd Vaadin rendering of small calendars
+			table-layout: fixed;
+
+			td{
+				position: relative;
+			}
+
+			td:nth-child(2){
+				left: -1px;
+			}
+			td:nth-child(3){
+				left: -3px;
+			}
+			td:nth-child(4){
+				left: -5px;
+			}
+			td:nth-child(5){
+				left: -7px;
+			}
+			td:nth-child(6){
+				left: -9px;
+			}
+			td:nth-child(7){
+				left: -11px;
+			}
+
+			.v-calendar-header-day{
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				overflow: hidden;
+				margin-right: 5px;
+			}
+		}
+
+		.l-calendarHeader{
+			height: 40px;
+			height: 4.0rem;
+			width: 100%;
+
+			.v-button{
+				border: none !important;
+				box-shadow: none !important;
+				background-size: cover !important;
+				background-position: center !important;
+				margin: 0 6px;
+			}
+
+			.v-slot.v-slot-v-button-prevmonth{
+				width: 0;
+			}
+
+			.l-calendar-today, .l-calendar-day, .l-calendar-week, .l-calendar-month{
+				position: relative;
+
+				.v-button-caption{
+					position: absolute;
+					top: 100%;
+					right: 0;
+					text-align: center;
+					font-size: 10px;
+					line-height: normal;
+					color: $theme__lighter_text_color;
+				}
+			}
+			.l-calendar-today{
+				.v-button-caption{
+					left: -2px;
+				}
+			}
+			.l-calendar-day{
+				.v-button-caption{
+					left: -1px;
+				}
+			}
+			.l-calendar-week{
+				.v-button-caption{
+					left: -4px;
+				}
+			}
+			.l-calendar-month{
+				.v-button-caption{
+					left: -6.5px;
+				}
+			}
+
+			.v-slot-l-calendarTitle{
+				// width: 100%;
+				// text-align: center;
+				padding-left: 72px;
+				padding-top: 7px;
+			}
+
+			.l-calendarTitle{
+				font-size: 20px;
+				font-size: 2.0rem;
+				color: $theme_calendarwidget_header_text_color;
+			}
+
+			.l-calendar-today{
+				background-image: url('../img/icon-calendar-today.png') !important;
+			}
+
+			.l-calendar-day{
+				background-image: url('../img/icon-calendar-day.png') !important;
+			}
+
+			.l-calendar-week{
+				background-image: url('../img/icon-calendar-week.png') !important;
+			}
+
+			.l-calendar-month{
+				background-image: url('../img/icon-calendar-month.png') !important;
+			}
+
+			.l-buttonLayout{
+				position: absolute;
+				top: 0;
+				right: 6px;
+			}
+		}
+
+		.v-button-prevmonth, .v-button-nextmonth, .v-calendar-next, .v-calendar-back{
+			padding: 0;			//	Disables default button style
+			border: none;
+			width: 0;
+			height: 0;
+
+			&:after{
+				letter-spacing: 0;
+				font-size: 25px;
+				font-size: 2.5rem;
+				top: 0;
+			}
+		}
+
+		.v-button-prevmonth:after, .v-calendar-back:after{
+			left: 42px;
+			padding: 0 6px;
+			padding-top: 7px;
+		}
+		.v-button-nextmonth:after, .v-calendar-next:after{
+			right: auto;
+			left: 72px;
+			padding: 0 6px;
+			padding-top: 7px;
+		}
+
+		.v-calendar-next, .v-calendar-back{
+			cursor: pointer !important;
+			opacity: 1 !important;
+		}
+	}
+}

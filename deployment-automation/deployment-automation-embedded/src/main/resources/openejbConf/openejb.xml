@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<openejb>
+	<Resource id="jdbc/LSPS_DS" type="javax.sql.DataSource">
+		JdbcDriver ${db.driverClass}
+		JdbcUrl ${db.connectionUrl}
+		Username ${db.username}
+		Password ${db.password}
+		DefaultTransactionIsolation = READ_COMMITTED 
+	</Resource>
+	<Resource id="jms/LSPS_QUEUE" type="javax.jms.Queue">
+		destination jms/LSPS_QUEUE
+	</Resource>
+	<Resource id="jms/LSPS_TOPIC" type="javax.jms.Topic">
+		destination jms/LSPS_TOPIC
+	</Resource>
+	<Resource id="mail/LSPS_MAIL"  type="javax.mail.Session">
+		<!--  
+	 	mail.transport.protocol smtp 
+		mail.smtp.host your.mail.server
+		mail.smtp.port 25
+		mail.from your@address
+		-->
+	</Resource>
+	<SecurityService id="com.whitestein.lsps.launcher.openejb#Jetty Security Service"/>
+	<TransactionManager id="Default Transaction Manager"/>
+	<Container id="stateless" type="STATELESS">
+		StrictPooling false
+	</Container>
+</openejb>
+

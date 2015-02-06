@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.tasklib:TaskLibrary
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.tasklib="http:///com/whitestein/lsps/modeler/tasklib.ecore"
+    xmi:id="_gwr-cK5QEeSsJdpZZuml9w">
+  <taskTypes
+      xmi:id="_kf-6sK5QEeSsJdpZZuml9w"
+      name="SystemCall"
+      classname="com.lst.deploymentautomation.ejb.SystemCallTask">
+    <signature
+        xmi:id="_lc5O4K5QEeSsJdpZZuml9w"
+        name="command"
+        parameterType="List&lt;String>"/>
+    <signature
+        xmi:id="_nPq0EK5QEeSsJdpZZuml9w"
+        name="output"
+        parameterType="Reference&lt;String>"/>
+    <signature
+        xmi:id="_q1JF8K5QEeSsJdpZZuml9w"
+        name="error"
+        parameterType="Reference&lt;String>"/>
+    <signature
+        xmi:id="_rfayAK5QEeSsJdpZZuml9w"
+        name="exitValue"
+        parameterType="Reference&lt;Integer>"/>
+  </taskTypes>
+</com.whitestein.lsps.modeler.tasklib:TaskLibrary>

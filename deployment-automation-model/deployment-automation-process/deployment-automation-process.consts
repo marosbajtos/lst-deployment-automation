@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.func:ModuleConstants
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.func="http:///com/whitestein/lsps/modeler/func.ecore"
+    xmi:id="_INF3YK5REeSsJdpZZuml9w">
+  <constants
+      xmi:id="_IXZC4K5REeSsJdpZZuml9w"
+      name="SYSTEM_CALL_ERROR"
+      type="String">
+    <expression><![CDATA["SYSTEM_CALL_ERROR"]]></expression>
+  </constants>
+</com.whitestein.lsps.modeler.func:ModuleConstants>

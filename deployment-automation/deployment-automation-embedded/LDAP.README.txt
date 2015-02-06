@@ -1,0 +1,61 @@
+Steps to do to switch to LDAP authentication:
+
+--------------------------------------------------------------------------------------------
+Embedded
+
+1. Open src/main/resources/openejbConf/login.config and change class name to "com.whitestein.lsps.launcher.jetty.LdapLSPSLoginModule".
+   Configure ldap.properties used by login module.
+
+2. Configure ldap-pm.properties in your ejb project so that it connects to your LDAP server
+
+3. Change the dependency in your embedded project pom file from
+
+<dependency>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-exec</artifactId>
+</dependency>
+
+to
+
+<dependency>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-ldap-exec</artifactId>
+</dependency>
+
+
+--------------------------------------------------------------------------------------------
+Production deployment
+
+1. Configure authentication of your application server so that it authenticates against your LDAP server
+
+2. Configure ldap-pm.properties in your ejb project so that it connects to your LDAP server
+
+3. Change the dependency in your ear project pom file from
+
+<dependency>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-exec</artifactId>
+</dependency>
+
+to
+
+<dependency>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-ldap-exec</artifactId>
+</dependency>
+
+and change the ejb module from 
+
+<ejbModule>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-exec</artifactId>
+	<bundleFileName>lsps-pm-exec.jar</bundleFileName>
+</ejbModule>
+
+to
+
+<ejbModule>
+	<groupId>com.whitestein.lsps.person-management</groupId>
+	<artifactId>lsps-pm-ldap-exec</artifactId>
+	<bundleFileName>lsps-pm-ldap-exec.jar</bundleFileName>
+</ejbModule>

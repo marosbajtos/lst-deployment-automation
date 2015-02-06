@@ -1,0 +1,11 @@
+// Import main style files
+@import "./sass/_theme-app_variables.scss";	//	Global variables
+@import "../modern-base/modern-base.scss";	//	LSPS modern base theme + Vaadin base
+@import "./sass/theme-app.scss";			//	This theme
+
+.modern {
+	@include modern-base;		//	base LSPS theme
+	@include theme-app;			//	this theme
+}
+
+@import "./sass/_theme-app_mobile.scss";	// styles for mobile device

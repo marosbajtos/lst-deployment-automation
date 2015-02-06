@@ -1,0 +1,28 @@
+$theme_border_color: $theme__default_border_color !default;
+
+@mixin theme-app-border{
+	.l-border-left{
+		border-left: 1px solid $theme_border_color;
+	}
+
+	.l-border-right{
+		border-right: 1px solid $theme_border_color;
+	}
+
+	.l-border-top{
+		border-top: 1px solid $theme_border_color;
+	}
+
+	.l-border-bottom{
+		border-bottom: 1px solid $theme_border_color;
+	}
+	.l-border-none, .v-panel-content-l-border-none{
+		border: none !important;		//	Removes all borders
+
+		&.ui-panel{
+			.v-panel-content{
+				border: none !important;		//	Removes all borders			
+			}
+		}
+	}
+}

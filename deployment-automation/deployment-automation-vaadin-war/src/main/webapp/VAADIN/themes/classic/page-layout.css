@@ -1,0 +1,252 @@
+.v-ui {
+	position: relative;
+	
+	min-width: 940px;
+	
+	border-width: 0;
+}
+.v-ui.fixed { /* fixed width */
+	margin: 0 auto !important;
+	
+	max-width: 1024px; /* For Modern Browsers */
+	width: auto !important; /* For Modern Browsers */
+	width: 960px; /* For old IE */
+	
+	border-width: 0 1px;
+	display: block !important;
+}
+
+
+#head {
+	height: 150px;
+	background: white url("img/app-header.png") top right no-repeat;
+}
+#head h1 {
+	margin: 0;
+	padding: 20px 20px 0px;
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+}
+#head span {
+	z-index: 1; 
+	display: block;
+	width: 240px;
+	height: 130px;
+	position: absolute;
+	top: 0;
+	
+	background: white url("img/app-logo.png") top left no-repeat;
+}
+
+
+#navigation {
+	width: 180px;
+	position: absolute;
+	background: none;
+	border: none;
+}
+.navigation-menu {
+	margin-bottom: 20px;
+	white-space: normal;
+	background: none;
+	width: 100%;
+}
+.navigation-menu .v-menubar-menuitem {
+	display: block;
+	white-space: normal;
+}
+.navigation-menu .v-menubar-menuitem:first-child {
+	border-top-right-radius: 3px;
+}
+.navigation-menu .v-menubar-menuitem:last-child {
+	border-bottom-right-radius: 3px;
+}
+
+
+.app-layout .v-customlayout {
+	height: 100%;
+}
+#container-content {
+	position: absolute;
+	left: 220px;
+	right: 10px;
+	top: 150px;
+	bottom: 10px;
+	z-index: 1;
+}
+
+.view-header h1 {
+	margin: 0 0 0.7em 0;
+}
+.view-header h1 .v-label {
+	line-height: 1.5em;
+}
+
+
+#container-foot {
+	width: 100%;
+	position: absolute;
+	bottom: 1px !important;
+}
+#foot {
+	margin: 3px 20px 0 20px;
+	height: 50px;
+	color: #999;
+	text-align: right;
+	background: url("img/wt-logo.png") no-repeat;
+	z-index: 0;
+}
+
+
+
+/* NARROW LAYOUT */
+@media only screen and (max-width: 940px) {
+	.v-app {
+		overflow: auto;
+	}
+	.v-ui {
+		margin: 0;
+		min-width: 720px;
+		width: auto;
+		border: none;
+	}
+	
+	#head {
+		background-size: 440px 104px;
+	}
+	#head span {
+		margin: -5px 0 0 -2px;
+	}
+
+	#container-content {
+		left: 0;
+		right: 0;
+		top: 170px;
+		bottom: 0;
+	}
+	.v-touch #container-foot {
+		display: none;
+	}
+	
+	
+	.view-header h1 {
+		padding: 0 16px 0 8px;
+	}
+	.view-header .menu-button {
+		margin: 0 8px 0 -8px;
+	}
+
+	#navigation {
+		width: auto;
+		position: relative;
+		margin: -40px 0 20px;
+		z-index: 1;
+	}
+	#navigation > div {
+		float: left;
+	}
+	#navigation .navigation-menu {
+		margin: 0 10px 5px 1px;
+	}
+	#navigation .navigation-menu .v-menubar-menuitem {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: inline-block;
+	}
+	.navigation-menu .v-menubar-menuitem:first-child {
+		border-top-right-radius: 0;
+	}
+	.navigation-menu .v-menubar-menuitem:last-child {
+		border-bottom-right-radius: 0;
+	}
+}
+
+/* MOBILE DEVICES */
+@media only screen and (max-device-width: 720px) {
+	.v-ui {
+		-webkit-text-size-adjust: none;
+		min-width: 0;
+	}
+	
+	.v-touch #head {
+		display: none;
+	}
+	.v-touch #container-foot {
+		display: none;
+	}
+
+	.v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select, .v-app button, .v-app textarea, .v-window input, .v-window select, .v-window button, .v-window textarea, .v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, .v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element, .v-table-header-drag,
+	.v-button-caption, .v-window-header {
+		font-family: sans-serif;
+		font-size: 14px;
+	}
+	.v-label {
+		line-height: 22px;
+	}
+	#head {
+		background-size: 220px 52px;
+		height: 65px;
+	}
+	#head h1 {
+		padding: 10px 10px 0px;
+		width: 100px;
+		height: 50px;
+		overflow: hidden;
+	}
+	#head span {
+		background-size: 144px 78px;
+		background-position: -5px;
+		width: 139px;
+		height: 60px;
+		margin: 0;
+	}
+	
+	#container-content {
+		left: 0px;
+		right: 0px;
+		top: 83px;
+	}
+	
+	.view-header {
+		margin: 0;
+		padding: 5px 0 !important;
+
+		background: #ddd;
+		border: 1px solid #bbb !important;
+		border-width: 1px 0 !important;
+		position: relative;
+		z-index: 10;
+	}
+	.view-header h1 {
+		text-align: center;
+		margin: 0;
+		padding: 5px;
+		font-size: 1.4em;
+	}
+
+	#navigation {
+		width: auto;
+		margin: 0;
+	}
+	#navigation > div {
+		float: none;
+	}
+	#navigation .navigation-menu {
+		position: relative;
+		margin: 0px -4px 0px 1px; /*0 2px 0 6px;*/
+	}
+	#navigation .navigation-menu .v-menubar-menuitem {
+		display: inline-block;
+		width: 50%;
+	}
+	
+	
+	#foot {
+		margin: 0px 5px;
+		padding-left: 120px;
+		font-size: 85%;
+		background-position: left 5px;
+		height: 40px;
+	}
+}

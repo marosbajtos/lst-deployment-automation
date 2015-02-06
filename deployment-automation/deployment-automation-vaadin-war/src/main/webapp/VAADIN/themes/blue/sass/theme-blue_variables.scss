@@ -1,0 +1,38 @@
+$theme__accent_color: 				#00adef	;
+$theme__contrast_color: 			#fff	;
+$theme__inline_component_height: 	28px 	;		//	Height of components that should align nicely when together in layout - button, inputs, etc.
+$theme__inline_component_height_rem:2.8rem 	;		//	Height of components that should align nicely when together in layout - button, inputs, etc.
+$theme__default_border_color:		#ddd	;
+$theme__secondary_border_color:		#777	;		//	On button, table header
+$theme__default_text_color:			#222	;
+$theme__grayed_text_color:			#888	;
+$theme__lighter_text_color:			#555	;
+$theme__default_background_color:	#fff	;
+$theme__secondary_background_color:	#fafafa	;
+
+$theme_menu_background_color: #2B4664; // #0f2f54;
+$theme_menu_item_background_color_active: rgba(67, 96, 128, 0.7); //#436080;
+// $theme_branding_logo_url: url('../blue/img/logo.png');
+// $theme_branding_logo_height: 90px;
+// $theme_branding_logo_height_collapsed: 53px;
+// $theme_branding_logo_background: #2B4664;
+// $theme_branding_logo_size: 90px auto;
+// $theme_branding_logo_size_collapsed: 35px auto;
+// $theme_branding_logo_position: 86px 9px;
+// $theme_branding_logo_position_collapsed: 6px 12px;
+$theme_table_row_selected_background: #00adef;//rgba(65, 154, 252, 0.6);
+$theme_table_row_selected_text_color: #fff;
+$theme_button_border_color: #012a51;
+$theme_button_hover_border_color: #012a51;
+$theme_button_background_color: #39597E;
+$theme_button_hover_background_color: #4883c1;
+$theme_button_text_color: #fff;
+$theme_breadcrumbs_background_color: #4883c1;
+$theme_breadcrumbs_count_background_color: #fff;
+$theme_breadcrumbs_count_text_color: #555;
+$theme_breadcrumbs_text_color: #fff;
+$theme_breadcrumbs_disabled_text_color: #888;
+$theme_breadcrumbs_disabled_background_color: #eee;
+$theme_icon_inButton_color: #fff;
+$theme_button_border_color: #39597E;
+$theme_button_hover_border_color: #4883c1;

@@ -1,0 +1,22 @@
+@mixin theme-app-panel{
+	.ui-panel-toggle{
+		&:before{
+			font-family: 'FontAwesome';
+			content: "\f067";
+			padding: 0 5px;
+			font-size: 14px;
+			font-size: 1.4rem;
+			color: $theme__lighter_text_color;
+			vertical-align: middle;
+		}
+
+		&.collapsible:before{
+			content: "\f068";
+		}
+
+		.v-button-caption{
+			vertical-align: middle;
+			text-decoration: none;
+		}
+	}
+}

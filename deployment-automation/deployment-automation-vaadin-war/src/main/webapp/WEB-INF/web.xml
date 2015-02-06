@@ -1,0 +1,208 @@
+<web-app id="WebApp_1178702080373" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<description>Living Systems Process Suite Application</description>
+	
+	<distributable/>
+	
+	
+	<!-- Vaadin servlet -->
+	<servlet>
+		<servlet-name>LspsVaadinApp</servlet-name>
+		<servlet-class>com.lst.deploymentautomation.vaadin.core.AppServlet</servlet-class>
+		<init-param>
+			<param-name>productionMode</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LspsVaadinApp</servlet-name>
+		<url-pattern>/VAADIN/*</url-pattern>
+		<url-pattern>/ui/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
+	<!-- Welcome files -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	<!-- Security -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>The Living Systems Process Suite Application</web-resource-name>
+			<url-pattern>/ui.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>user</role-name>
+		</auth-constraint>
+	</security-constraint>
+	
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>lspsRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/login.jsp?failed</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	
+	<!-- added to workaround injection on Websphere 7 with JSF 2.0 in a shared library -->
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/ComponentServiceLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.whitestein.lsps.common.ComponentServiceLocal</local>
+		<ejb-link>ComponentServiceBean</ejb-link>
+	</ejb-local-ref>
+
+	<!--  EJB references for automatic Vaadin injection -->
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/SecurityManagerServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.common.ejb.SecurityManagerServiceLocal
+      	</local>
+      	<ejb-link>
+        	SecurityManagerServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/PersonManagementServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.os.ejb.PersonManagementServiceLocal
+      	</local>
+      	<ejb-link>
+        	PersonManagementServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/PersonServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.os.ejb.PersonServiceLocal
+      	</local>
+      	<ejb-link>
+        	PersonServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/ModelManagementServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ejb.ModelManagementServiceLocal
+      	</local>
+      	<ejb-link>
+        	ModelManagementServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/HumanActionsServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.human.ejb.HumanActionsServiceLocal
+      	</local>
+      	<ejb-link>
+        	HumanActionsServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/TodoServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.human.ejb.TodoServiceLocal
+      	</local>
+      	<ejb-link>
+        	TodoServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/ProcessServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ejb.ProcessServiceLocal
+      	</local>
+      	<ejb-link>
+        	ProcessServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/LocalizationServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ejb.LocalizationServiceLocal
+      	</local>
+      	<ejb-link>
+        	LocalizationServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/ModelProviderClientService</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ModelProviderClientService
+      	</local>
+      	<ejb-link>
+        	ModelProviderServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/BinaryDataServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ejb.BinaryDataServiceLocal
+      	</local>
+      	<ejb-link>
+        	BinaryDataServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/GenericDocumentServiceLocal</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.human.ejb.GenericDocumentServiceLocal
+      	</local>
+      	<ejb-link>
+        	GenericDocumentServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/SharedRecordTypeFactory</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.SharedRecordTypeFactory
+      	</local>
+      	<ejb-link>
+        	SharedRecordTypeFactoryImpl
+      	</ejb-link>
+	</ejb-local-ref>
+	
+	<ejb-local-ref>
+     	<ejb-ref-name>ejb/ModelInstanceUtilsService</ejb-ref-name>
+      	<ejb-ref-type>Session</ejb-ref-type>
+      	<local>
+        	 com.whitestein.lsps.engine.ModelInstanceUtilsService
+      	</local>
+      	<ejb-link>
+        	ModelInstanceUtilsServiceBean
+      	</ejb-link>
+	</ejb-local-ref>
+	
+</web-app>

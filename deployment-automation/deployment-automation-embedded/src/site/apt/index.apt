@@ -1,0 +1,15 @@
+            ------
+            About
+            ------
+            Roman Kitko
+            ------
+             2007-10-30
+
+About the project
+
+  This project tries to make launching of lsps-testapp easier. There is new launcher in eclipse if u import this project named OpenEjbAndJettyLauncher. 
+This launcher uses emebedded openejb and jetty to launch test application and webconsole. You shold configure only one config file abpm-testapp-trunk/acm-embedded/conf/openejb.xml
+where u can configure database settings. After succesfull launch u should see applications at :
+http://localhost:8080/lsps-testapp/ and http://localhost:8080/lsps-webconsole
+
+

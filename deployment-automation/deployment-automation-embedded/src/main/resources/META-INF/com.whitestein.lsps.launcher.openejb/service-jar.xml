@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceJar>
+  <ServiceProvider
+          id="Jetty Security Service"
+          service="SecurityService"
+          types="SecurityService"
+          class-name="com.whitestein.lsps.launcher.openejb.JettySecurityService"/>
+</ServiceJar>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.module:ProjectDescription
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.module="http:///com/whitestein/lsps/modeler/module.ecore"
+    xmi:id="_y2zv8K5IEeSsJdpZZuml9w">
+  <libraries
+      xmi:id="_y2zv8a5IEeSsJdpZZuml9w"
+      location="Standard Library.zip"
+      type="INTERNAL"
+      format="1"/>
+  <libraries
+      xmi:id="_y2zv8q5IEeSsJdpZZuml9w"
+      location="Exchange Client.zip"
+      type="INTERNAL"
+      format="1"/>
+  <libraries
+      xmi:id="_y2zv865IEeSsJdpZZuml9w"
+      location="Sharepoint Client.zip"
+      type="INTERNAL"
+      format="1"/>
+</com.whitestein.lsps.modeler.module:ProjectDescription>

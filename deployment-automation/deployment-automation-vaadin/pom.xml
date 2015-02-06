@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.lst</groupId>
+		<artifactId>deployment-automation</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>deployment-automation-vaadin</artifactId>
+	<name>LSPS: Application: Vaadin App</name>
+	<description>Living Systems Process Suite: Application: Vaadin Application</description>
+
+	<!-- Dependency list -->
+	<dependencies>
+		<dependency>
+			<groupId>com.whitestein.lsps.human-processes</groupId>
+			<artifactId>lsps-human-vaadin</artifactId>
+		</dependency>
+	</dependencies>
+</project>

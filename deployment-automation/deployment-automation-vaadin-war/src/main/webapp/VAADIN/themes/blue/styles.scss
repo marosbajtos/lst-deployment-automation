@@ -1,0 +1,9 @@
+// Import main style files
+@import "./sass/theme-blue_variables.scss";	//	Global variables + overrides
+@import "../modern-base/modern-base.scss";	//	LSPS modern base theme + Vaadin base
+@import "./sass/theme-blue.scss";			//	This theme
+
+.blue {
+	@include modern-base;		//	base LSPS theme
+	@include theme-blue;		//	this theme
+}

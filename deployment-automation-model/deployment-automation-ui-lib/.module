@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.module:ModuleDescription
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.module="http:///com/whitestein/lsps/modeler/module.ecore"
+    xmi:id="_viUC4K5UEeSsJdpZZuml9w"
+    version="1.0"
+    main="true">
+  <moduleImports
+      xmi:id="_w_RJEK5UEeSsJdpZZuml9w"
+      moduleName="ui"/>
+  <moduleImports
+      xmi:id="_w_RJEa5UEeSsJdpZZuml9w"
+      moduleName="core"/>
+  <moduleImports
+      xmi:id="_w_RJEq5UEeSsJdpZZuml9w"
+      moduleName="human"/>
+</com.whitestein.lsps.modeler.module:ModuleDescription>

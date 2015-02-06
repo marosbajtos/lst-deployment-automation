@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:CustomComponents
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_GkL8oKovEeSQe8Lxo5LlkA">
+  <components
+      xmi:id="_j3O_8KovEeSQe8Lxo5LlkA"
+      name="TableTemplate"
+      iconPath="Table.png"
+      dataType="CrlTable"
+      type="EXPRESSION">
+    <properties
+        xmi:id="_j3O_8aovEeSQe8Lxo5LlkA"
+        name="data"
+        displayName="Data"
+        mandatory="true"
+        diagram="true"
+        type="Object"/>
+    <properties
+        xmi:id="_j3O_8qovEeSQe8Lxo5LlkA"
+        name="dataCount"
+        displayName="Data Count"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Integer}"/>
+    <properties
+        xmi:id="_j3O_86ovEeSQe8Lxo5LlkA"
+        name="iterator"
+        displayName="Iterator"
+        mandatory="true"
+        type="Reference&lt;Record>"/>
+    <properties
+        xmi:id="_j3O_9KovEeSQe8Lxo5LlkA"
+        name="editedItem"
+        displayName="Edited Object"
+        type="Reference&lt;Record>"/>
+    <properties
+        xmi:id="_j3O_9aovEeSQe8Lxo5LlkA"
+        name="type"
+        displayName="TableType"
+        type="TableType"/>
+    <properties
+        xmi:id="_j3O_9qovEeSQe8Lxo5LlkA"
+        name="columns"
+        displayName="Columns"
+        editStyle="COMPONENT_LIST"
+        type="List&lt;UIComponent>"/>
+    <properties
+        xmi:id="_j3O_96ovEeSQe8Lxo5LlkA"
+        name="editPopup"
+        displayName="Edit popup"
+        editStyle="COMPONENT"
+        type="UIComponent"/>
+    <properties
+        xmi:id="_j3O_-KovEeSQe8Lxo5LlkA"
+        name="editPopupTitle"
+        displayName="Edit popup title"
+        type="{TableAction:String}"/>
+    <properties
+        xmi:id="_j3O_-qovEeSQe8Lxo5LlkA"
+        name="addExpression"
+        displayName="Add Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        mandatory="true"
+        type="{:Record}"/>
+    <properties
+        xmi:id="_j3O__KovEeSQe8Lxo5LlkA"
+        name="editExpression"
+        displayName="Edit Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_j3O__aovEeSQe8Lxo5LlkA"
+        name="moveExpression"
+        displayName="Move Expression"
+        type="{MoveAction:Object}"/>
+    <properties
+        xmi:id="_j3O__qovEeSQe8Lxo5LlkA"
+        name="isMoveEnabled"
+        displayName="Is Move Enabled"
+        type="{MoveAction:Boolean}"/>
+    <properties
+        xmi:id="_j3PAAKovEeSQe8Lxo5LlkA"
+        name="removeExpression"
+        displayName="Remove Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_j3PAAqovEeSQe8Lxo5LlkA"
+        name="isTableRowReadOnly"
+        displayName="Is Table Row ReadOnly"
+        type="Reference&lt;{:Boolean}>"/>
+    <properties
+        xmi:id="_j3PAA6ovEeSQe8Lxo5LlkA"
+        name="okExpression"
+        displayName="Ok Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_j3PABKovEeSQe8Lxo5LlkA"
+        name="showActionToolbar"
+        displayName="Show Action Toolbar"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PABaovEeSQe8Lxo5LlkA"
+        name="allowAdd"
+        displayName="Allow to Add"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PABqovEeSQe8Lxo5LlkA"
+        name="allowEdit"
+        displayName="Allow to Edit"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PAB6ovEeSQe8Lxo5LlkA"
+        name="allowRemove"
+        displayName="Allow to Remove"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PACKovEeSQe8Lxo5LlkA"
+        name="allowMove"
+        displayName="Allow to Move"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PACaovEeSQe8Lxo5LlkA"
+        name="additionalHint"
+        displayName="Additional Hint"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Map&lt;String, Object>}"/>
+    <properties
+        xmi:id="_j3PACqovEeSQe8Lxo5LlkA"
+        name="okValidation"
+        displayName="Ok Validation"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:List&lt;ConstraintViolation>}"/>
+    <properties
+        xmi:id="_j3PADKovEeSQe8Lxo5LlkA"
+        name="okListeners"
+        displayName="Ok Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_j3PADaovEeSQe8Lxo5LlkA"
+        name="editListeners"
+        displayName="Edit Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_j3PADqovEeSQe8Lxo5LlkA"
+        name="addListeners"
+        displayName="Add Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_j3PAD6ovEeSQe8Lxo5LlkA"
+        name="removeListeners"
+        displayName="Remove Listeners"
+        type="Set&lt;ActionListener>"/>
+    <expression><![CDATA[/* 
+Features:
+-- automatic (in memory sorting)
+-- table column sort criteria are guessed based on binding
+*/
+
+
+//if isTableRowReadOnly slot is not provided for us, create one
+def Reference<{:Boolean}> isTableRowReadOnlyRef := 
+		isTableRowReadOnly = null ? (def {:Boolean} _isTableReadOnly; &_isTableReadOnly) : isTableRowReadOnly;
+
+def Reference<Record> editedItemRef :=
+		editedItem = null ? (def Record _editedItem; &_editedItem) : editedItem;
+		
+def TableAction tableAction;
+
+def UIComponent result := 
+		tableTemplate(
+			data, 
+			dataCount, 
+			iterator, 
+			editedItemRef,
+			'type', 
+			addExpression, 
+			editExpression, 
+			moveExpression,
+			isMoveEnabled,
+			removeExpression, 
+			isTableRowReadOnlyRef,
+			okExpression,
+			columns as List<TableColumn>/*remove the cast*/,
+			editPopup,
+			editPopupTitle,
+			showActionToolbar,
+			allowAdd,
+			allowEdit,
+			allowRemove,
+			allowMove,
+			additionalHint,
+			okValidation,
+			okListeners,
+			editListeners,
+			addListeners,
+			removeListeners,
+			&tableAction
+			);
+			
+// make all components in the table RO/RW based on RO/RW status of the table row			
+foreach TableColumn tc in columns as List<TableColumn> do 
+	traverseComponentTree(tc, {c:UIComponent -> applyReadOnly(c, *isTableRowReadOnlyRef)})
+end;
+if editPopup != null then
+	traverseComponentTree(editPopup, {c:UIComponent -> applyReadOnly(c, { -> tableAction = TableAction.SHOW})})
+end;
+
+result]]></expression>
+  </components>
+  <components
+      xmi:id="_j3PAEKovEeSQe8Lxo5LlkA"
+      name="TableColumn"
+      iconPath="TableColumn.png"
+      dataType="CrlTableColumn"
+      type="EXPRESSION">
+    <properties
+        xmi:id="_j3PAEaovEeSQe8Lxo5LlkA"
+        name="header"
+        displayName="Header"
+        editStyle="DYNAMIC_EXPRESSION"
+        mandatory="true"
+        diagram="true"
+        type="{:String}"/>
+    <properties
+        xmi:id="_j3PAEqovEeSQe8Lxo5LlkA"
+        name="content"
+        displayName="Content"
+        editStyle="COMPONENT"
+        mandatory="true"
+        type="UIComponent"/>
+    <properties
+        xmi:id="_j3PAE6ovEeSQe8Lxo5LlkA"
+        name="shown"
+        displayName="Shown"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_j3PAFKovEeSQe8Lxo5LlkA"
+        name="autosortDisabled"
+        displayName="Autosort disabled"
+        type="Boolean"/>
+    <properties
+        xmi:id="_j3PAFaovEeSQe8Lxo5LlkA"
+        name="sort"
+        displayName="Sort"
+        type="Object"/>
+    <properties
+        xmi:id="_j3PAFqovEeSQe8Lxo5LlkA"
+        name="width"
+        displayName="Width"
+        type="String"/>
+    <expression><![CDATA[def TableColumn column := new TableColumn(header -> header, content -> content, visible -> shown, ordering -> sort);
+
+if width != null then
+	column.hints := {->[#"width"-> width]};
+end;
+
+column
+
+]]></expression>
+  </components>
+  <components
+      xmi:id="_XdS8sKx9EeSjyY2D8HPWww"
+      name="ButtonWithPopup"
+      type="EXPRESSION">
+    <properties
+        xmi:id="_ZAWq4Kx9EeSjyY2D8HPWww"
+        name="buttonLabel"
+        editStyle="DYNAMIC_EXPRESSION"
+        diagram="true"
+        type="{:String}"/>
+    <properties
+        xmi:id="_5RHUIKyLEeSjyY2D8HPWww"
+        name="popupTitle"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:String}"/>
+    <properties
+        xmi:id="_aWUYQKx9EeSjyY2D8HPWww"
+        name="okExpression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_iMzMUKx9EeSjyY2D8HPWww"
+        name="cancelExpression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_jlHDEKx9EeSjyY2D8HPWww"
+        name="popupContent"
+        editStyle="COMPONENT"
+        mandatory="true"
+        type="UIComponent"/>
+    <properties
+        xmi:id="_8VIJoKyJEeSjyY2D8HPWww"
+        name="refreshComponents"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Set&lt;UIComponent>}"/>
+    <properties
+        xmi:id="_UD7iQKx_EeSjyY2D8HPWww"
+        name="persist"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_V1SyMKx_EeSjyY2D8HPWww"
+        name="navigation"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Navigation}"/>
+    <expression>popupTemplate(buttonLabel, popupTitle, popupContent, okExpression, cancelExpression, persist, navigation, refreshComponents)</expression>
+  </components>
+  <components
+      xmi:id="_vKutcKygEeSjyY2D8HPWww"
+      name="OutputTextWithBinding"
+      dataType="OutputTextWithBinding"
+      type="EXPRESSION">
+    <properties
+        xmi:id="_EFi6gKyhEeSjyY2D8HPWww"
+        name="binding"
+        displayName="Binding"
+        diagram="true"
+        type="Reference&lt;Object>"/>
+    <properties
+        xmi:id="_aTWkAKyiEeSjyY2D8HPWww"
+        name="format"
+        displayName="Format"
+        type="String"/>
+    <properties
+        xmi:id="_Ew89EKyjEeSjyY2D8HPWww"
+        name="content"
+        displayName="Content"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <expression><![CDATA[new OutputTextWithBinding(
+	content -> content ?? { -> binding != null ? try *binding catch null -> null end : null }, 
+	format -> format, 
+	binding -> binding
+)]]></expression>
+  </components>
+  <components
+      xmi:id="_RHVxAK4OEeS_NIdAnGdScA"
+      name="TreeTableTemplate"
+      iconPath="Table.png"
+      dataType="CrlTable"
+      type="EXPRESSION">
+    <properties
+        xmi:id="_RHVxAa4OEeS_NIdAnGdScA"
+        name="data"
+        displayName="Data"
+        editStyle="DYNAMIC_EXPRESSION"
+        mandatory="true"
+        diagram="true"
+        type="{:Collection&lt;TreeItem>}"/>
+    <properties
+        xmi:id="_RHVxA64OEeS_NIdAnGdScA"
+        name="iterator"
+        displayName="Iterator"
+        mandatory="true"
+        type="Reference&lt;Record>"/>
+    <properties
+        xmi:id="_fmrIYK4OEeS_NIdAnGdScA"
+        name="treeItemIterator"
+        displayName="Tree item iterator"
+        type="Reference&lt;TreeItem>"/>
+    <properties
+        xmi:id="_RHVxBK4OEeS_NIdAnGdScA"
+        name="editedItem"
+        displayName="Edited Object"
+        type="Reference&lt;Record>"/>
+    <properties
+        xmi:id="_RHVxBq4OEeS_NIdAnGdScA"
+        name="columns"
+        displayName="Columns"
+        editStyle="COMPONENT_LIST"
+        type="List&lt;UIComponent>"/>
+    <properties
+        xmi:id="_RHVxB64OEeS_NIdAnGdScA"
+        name="editPopup"
+        displayName="Edit popup"
+        editStyle="COMPONENT"
+        type="UIComponent"/>
+    <properties
+        xmi:id="_RHVxCK4OEeS_NIdAnGdScA"
+        name="editPopupTitle"
+        displayName="Edit popup title"
+        type="{TableAction:String}"/>
+    <properties
+        xmi:id="_RHVxCa4OEeS_NIdAnGdScA"
+        name="addExpression"
+        displayName="Add Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        mandatory="true"
+        type="{:Record}"/>
+    <properties
+        xmi:id="_RHVxCq4OEeS_NIdAnGdScA"
+        name="editExpression"
+        displayName="Edit Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_RHVxC64OEeS_NIdAnGdScA"
+        name="moveExpression"
+        displayName="Move Expression"
+        type="{MoveAction:Object}"/>
+    <properties
+        xmi:id="_RHVxDK4OEeS_NIdAnGdScA"
+        name="isMoveEnabled"
+        displayName="Is Move Enabled"
+        type="{MoveAction:Boolean}"/>
+    <properties
+        xmi:id="_RHVxDa4OEeS_NIdAnGdScA"
+        name="removeExpression"
+        displayName="Remove Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_RHVxDq4OEeS_NIdAnGdScA"
+        name="isTableRowReadOnly"
+        displayName="Is Table Row ReadOnly"
+        type="Reference&lt;{:Boolean}>"/>
+    <properties
+        xmi:id="_RHVxD64OEeS_NIdAnGdScA"
+        name="okExpression"
+        displayName="Ok Expression"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Object}"/>
+    <properties
+        xmi:id="_RHVxEK4OEeS_NIdAnGdScA"
+        name="showActionToolbar"
+        displayName="Show Action Toolbar"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_RHVxEa4OEeS_NIdAnGdScA"
+        name="allowAdd"
+        displayName="Allow to Add"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_RHVxEq4OEeS_NIdAnGdScA"
+        name="allowEdit"
+        displayName="Allow to Edit"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_RHVxE64OEeS_NIdAnGdScA"
+        name="allowRemove"
+        displayName="Allow to Remove"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_RHVxFK4OEeS_NIdAnGdScA"
+        name="allowMove"
+        displayName="Allow to Move"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Boolean}"/>
+    <properties
+        xmi:id="_RHVxFa4OEeS_NIdAnGdScA"
+        name="additionalHint"
+        displayName="Additional Hint"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:Map&lt;String, Object>}"/>
+    <properties
+        xmi:id="_RHVxFq4OEeS_NIdAnGdScA"
+        name="okValidation"
+        displayName="Ok Validation"
+        editStyle="DYNAMIC_EXPRESSION"
+        type="{:List&lt;ConstraintViolation>}"/>
+    <properties
+        xmi:id="_RHVxF64OEeS_NIdAnGdScA"
+        name="okListeners"
+        displayName="Ok Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_RHVxGK4OEeS_NIdAnGdScA"
+        name="editListeners"
+        displayName="Edit Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_RHVxGa4OEeS_NIdAnGdScA"
+        name="addListeners"
+        displayName="Add Listeners"
+        type="Set&lt;ActionListener>"/>
+    <properties
+        xmi:id="_RHVxGq4OEeS_NIdAnGdScA"
+        name="removeListeners"
+        displayName="Remove Listeners"
+        type="Set&lt;ActionListener>"/>
+    <expression><![CDATA[/* 
+Features:
+-- automatic (in memory sorting)
+-- table column sort criteria are guessed based on binding
+*/
+
+
+//if isTableRowReadOnly slot is not provided for us, create one
+def Reference<{:Boolean}> isTableRowReadOnlyRef := 
+		isTableRowReadOnly = null ? (def {:Boolean} _isTableReadOnly; &_isTableReadOnly) : isTableRowReadOnly;
+
+def Reference<Record> editedItemRef :=
+		editedItem = null ? (def Record _editedItem; &_editedItem) : editedItem;
+		
+def TableAction tableAction;
+
+def UIComponent result := 
+		treeTableTemplate(
+			data, 
+			iterator, 
+			treeItemIterator,
+			editedItemRef,
+			addExpression, 
+			editExpression, 
+			moveExpression,
+			isMoveEnabled,
+			removeExpression, 
+			isTableRowReadOnlyRef,
+			okExpression,
+			columns as List<TableColumn>/*remove the cast*/,
+			editPopup,
+			editPopupTitle,
+			showActionToolbar,
+			allowAdd,
+			allowEdit,
+			allowRemove,
+			allowMove,
+			additionalHint,
+			okValidation,
+			okListeners,
+			editListeners,
+			addListeners,
+			removeListeners,
+			&tableAction
+			);
+			
+// make all components in the table RO/RW based on RO/RW status of the table row			
+foreach TableColumn tc in columns as List<TableColumn> do 
+	traverseComponentTree(tc, {c:UIComponent -> applyReadOnly(c, *isTableRowReadOnlyRef)})
+end;
+if editPopup != null then
+	traverseComponentTree(editPopup, {c:UIComponent -> applyReadOnly(c, { -> tableAction = TableAction.SHOW})})
+end;
+
+result]]></expression>
+  </components>
+</com.whitestein.lsps.modeler.form:CustomComponents>

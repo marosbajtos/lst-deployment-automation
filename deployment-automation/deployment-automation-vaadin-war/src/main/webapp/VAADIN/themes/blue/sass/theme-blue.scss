@@ -1,0 +1,36 @@
+@import "../../modern/sass/theme-app.scss";
+
+@mixin theme-blue{
+	@include theme-app;
+
+	#container-head{
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #2B4664),
+			color-stop(1, #0F2F54)
+		);
+		background-image: -o-linear-gradient(bottom, #2B4664 0%, #0F2F54 100%);
+		background-image: -moz-linear-gradient(bottom, #2B4664 0%, #0F2F54 100%);
+		background-image: -webkit-linear-gradient(bottom, #2B4664 0%, #0F2F54 100%);
+		background-image: -ms-linear-gradient(bottom, #2B4664 0%, #0F2F54 100%);
+		background-image: linear-gradient(to bottom, #2B4664 0%, #0F2F54 100%);
+
+		.v-menubar-menuitem{
+			border-bottom: 1px #0b213c solid;
+		}
+
+		h1{
+			border-bottom: 1px #0b213c solid;
+		}
+	}
+
+	.v-disabled{
+		&.v-button{
+			border-style: none !important;
+			opacity: 0.4;
+			filter: alpha(opacity=40);		//	For IE, Vaadin SASS compiler cant handle this with variable yet.
+		}
+	}
+}

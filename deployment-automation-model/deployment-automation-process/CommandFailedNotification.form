@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_XMxJcK5WEeSsJdpZZuml9w"
+    name="CommandFailedNotification"
+    newUI="true">
+  <parameters
+      xmi:id="_d2eBUK5WEeSsJdpZZuml9w"
+      name="commandExecution"
+      parameterType="CommandExecution"/>
+  <parameters
+      xmi:id="_yCTogK5WEeSsJdpZZuml9w"
+      name="tryAgain"
+      parameterType="Reference&lt;Boolean>"/>
+  <parameters
+      xmi:id="_yNwOEK5XEeSsJdpZZuml9w"
+      name="target"
+      parameterType="Reference&lt;String>"/>
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+      xmi:id="_YFFRgK5WEeSsJdpZZuml9w">
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+        xmi:id="_ZugGYK5WEeSsJdpZZuml9w">
+      <content><![CDATA["The command " + commandExecution.command + " has failed with exit value " + commandExecution.exitValue + ". What do you wish to do?"]]></content>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdComboBox"
+        xmi:id="_8sHDUK5XEeSsJdpZZuml9w">
+      <binding>target</binding>
+      <label><![CDATA["Target"]]></label>
+      <options>getTargetOptions()</options>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+        xmi:id="_wmnGkK5WEeSsJdpZZuml9w"
+        horizontal="true">
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+          xmi:id="_1w0hoK5WEeSsJdpZZuml9w">
+        <listeners
+            xmi:id="_7IqwEK5WEeSsJdpZZuml9w"
+            listenerType="ACTION_LISTENER">
+          <submitAction
+              xmi:id="_7IqwEa5WEeSsJdpZZuml9w"/>
+          <handle>*tryAgain := false</handle>
+        </listeners>
+        <text><![CDATA["Terminate"]]></text>
+      </components>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+          xmi:id="_3XrKsK5WEeSsJdpZZuml9w">
+        <listeners
+            xmi:id="__gtHUK5WEeSsJdpZZuml9w"
+            listenerType="ACTION_LISTENER">
+          <submitAction
+              xmi:id="__gtHUa5WEeSsJdpZZuml9w"/>
+          <handle>*tryAgain := true;</handle>
+        </listeners>
+        <text><![CDATA["Try again"]]></text>
+      </components>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdPanel"
+        xmi:id="_ruzDEK5WEeSsJdpZZuml9w">
+      <child
+          xsi:type="com.whitestein.lsps.modeler.form:NfdReusable"
+          xmi:id="_EQ6G8K5XEeSsJdpZZuml9w">
+        <expression>DeploymentRunDetail(commandExecution.run)</expression>
+      </child>
+      <title><![CDATA["Deployment details"]]></title>
+      <collapsedExpression><![CDATA[def Boolean c := true; &c]]></collapsedExpression>
+    </components>
+  </formItem>
+</com.whitestein.lsps.modeler.form:FormDefinition>

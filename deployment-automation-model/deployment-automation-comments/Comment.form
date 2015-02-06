@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_ppzdgKyKEeSjyY2D8HPWww"
+    name="Comment"
+    newUI="true">
+  <parameters
+      xmi:id="_qT5jYKyKEeSjyY2D8HPWww"
+      name="comment"
+      parameterType="Reference&lt;Comment>"/>
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdPanel"
+      xmi:id="_rxp60KyKEeSjyY2D8HPWww">
+    <child
+        xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+        xmi:id="_rxp60ayKEeSjyY2D8HPWww">
+      <content>comment.text</content>
+      <format></format>
+    </child>
+    <title><![CDATA["Comment by " + getPersonFullName(comment.createdBy) + " on " + formatDate(comment.date, "MM-dd-yyyy HH:mm", null)]]></title>
+  </formItem>
+</com.whitestein.lsps.modeler.form:FormDefinition>

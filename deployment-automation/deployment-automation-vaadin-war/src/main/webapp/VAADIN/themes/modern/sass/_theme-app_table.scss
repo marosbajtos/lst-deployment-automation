@@ -1,0 +1,109 @@
+@mixin theme-app-table{
+	.ui-pager{
+		.l-table-pager-button{
+			border-color: transparent !important;
+			box-shadow: none !important;
+			background: none !important;
+			line-height: $theme__inline_component_height - $theme_button_border_width - $theme_button_border_width;
+
+			.v-button-wrap{
+				&:before{
+					font-family: 'FontAwesome';
+					letter-spacing: -2px;
+					padding-right: 0;
+				}
+			}
+			.v-button-caption{
+				display: none;
+			}
+		}
+		.l-table-pager-firstPage{
+			@extend .l-table-pager-button;
+
+			.v-button-wrap{
+				&:before{
+					content: "\f053\f053";
+				}
+			}
+		}
+		.l-table-pager-previousPage{
+			@extend .l-table-pager-button;
+
+			.v-button-wrap{
+				&:before{
+					content: "\f053";
+				}
+			}
+		}
+		.l-table-pager-nextPage{
+			@extend .l-table-pager-button;
+
+			.v-button-wrap{
+				&:before{
+					content: "\f054";
+				}
+			}
+		}
+		.l-table-pager-lastPage{
+			@extend .l-table-pager-button;
+
+			.v-button-wrap{
+				&:before{
+					content: "\f054\f054";
+				}
+			}
+		}
+	}
+
+	.v-table-header td:last-child{
+		position: relative;
+
+		.v-table-sort-indicator{
+			position: absolute;
+			right: 25px;
+		}
+	}
+
+	.l-grouping{
+		.v-table-header td:last-child{
+			.v-table-sort-indicator{
+				right: 45px;
+			}
+		}
+	}
+
+	.v-slot-l-grouping-button{
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin: 0 !important;
+		overflow: visible;
+		visibility: visible !important;
+
+		.l-grouping-button{
+			border: none !important;
+			box-shadow: none !important;
+			padding: 0 !important;
+			margin-right: $theme_typography_font_size + 2px + $theme_table_header_padding_vertical + $theme_table_header_padding_vertical;
+			height: $theme_typography_font_size + 2px + $theme_table_header_padding_vertical + $theme_table_header_padding_vertical !important;
+
+			.v-icon{
+				display: block;
+				font-size: 17px;
+				background: $theme_table_header_button_background_color;
+				width: $theme_typography_font_size + 2px + $theme_table_header_padding_vertical + $theme_table_header_padding_vertical;
+				line-height: $theme_typography_font_size + 2px + $theme_table_header_padding_vertical + $theme_table_header_padding_vertical;
+				text-align: center;
+				@include theme-mixins-transition(background-color, 0.2s);
+			}
+
+			&:hover .v-icon{
+				background: lighten($theme_table_header_button_background_color, 5%);
+			}
+
+			.v-popup-indicator{
+				display: none;
+			}
+		}
+	}
+}

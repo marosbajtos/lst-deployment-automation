@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+	<!-- Make sub deployments NOT isolated, so they can see each others classes without a Class-Path entry -->
+	<ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+	<deployment>
+		<dependencies>
+			<!-- FIXME Due to a bug known in JBoss 7 (confirmed for up to 7.1.1.Final, https://issues.jboss.org/browse/AS7-1271), 
+				com.whitestein.lsps.wsserver.task.WsRequestMessage cannot be deserialized if sent assynchronously through JMS. This fixes 
+				the issue. Remove when not needed anymore. -->
+			<module name="org.apache.xerces" export="true" />
+		</dependencies>
+		<exclusions>
+			<!-- Exclusions allow you to prevent the server from automatically adding some dependencies -->
+			<module name="org.apache.log4j" />
+			<!-- We ship own version of Hibernate -->
+			<module name="org.hibernate" />
+			<!-- We ship own version of Javassist -->
+			<module name="org.javassist" />
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure>

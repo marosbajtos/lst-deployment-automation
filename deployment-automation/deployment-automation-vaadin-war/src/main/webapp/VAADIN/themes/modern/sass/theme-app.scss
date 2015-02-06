@@ -1,0 +1,21 @@
+@import "_theme-app_dashboard.scss";
+@import "_theme-app_border.scss";
+@import "_theme-app_content-hierarchy.scss";
+@import "_theme-app_content-layout.scss";
+@import "_theme-app_breadcrumbs.scss";
+@import "_theme-app_calendarwidget.scss";
+@import "_theme-app_error.scss";
+@import "_theme-app_panel.scss";
+@import "_theme-app_table.scss";
+
+@mixin theme-app{
+	@include theme-app-dashboard;			//	styles for dashboard component: ui-dashboard, dashWidget, v-popupbutton
+	@include theme-app-border;				//	styles for border arount components: l-border
+	@include theme-app-content-hierarchy;	//	styles for hierarchy of content: l-emphasized, l-highlighted, l-grayed
+	@include theme-app-content-layout;		//	styles for layout of some components (v-select-optiongroup): layout
+	@include theme-app-breadcrumbs;			//	styles for breadcrumbs: l-breadcrumbs
+	@include theme-app-calendarwidget;		//	styles for calendar component: l-calendarWidget
+	@include theme-app-error;				//	styles for special error handling: l-helperWrapper-padded, l-required-padded
+	@include theme-app-panel;				//	styles for panel component: ui-panel
+	@include theme-app-table;				//	styles for table component: ui-pager, l-grouping-button
+}

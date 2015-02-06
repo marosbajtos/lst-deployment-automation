@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.func:ModuleFunctions
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.func="http:///com/whitestein/lsps/modeler/func.ecore"
+    xmi:id="_370kIK5XEeSsJdpZZuml9w">
+  <functions
+      xmi:id="_4FI4MK5XEeSsJdpZZuml9w"
+      name="getTargetOptions"
+      type="List&lt;Option>">
+    <expression><![CDATA[[
+	new Option(value -> "PROD_SERVER1", label -> "Production Server Node 1"),
+	new Option(value -> "PROD_SERVER2", label -> "Production Server Node 2"),
+	new Option(value -> "TEST_SERVER1", label -> "Test Server Node 1"),
+	new Option(value -> "TEST_SERVER2", label -> "Test Server Node 2")
+	
+]]]></expression>
+  </functions>
+</com.whitestein.lsps.modeler.func:ModuleFunctions>

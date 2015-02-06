@@ -1,0 +1,82 @@
+/* APPLICATION SPECIFIC STYLES */
+
+h1 {
+	margin: 0 0 1em 0;
+	font-size: 1.6em;
+}
+h1 .v-label {
+	font-size: 100%;
+}
+
+h2 {
+	margin: 0 0 1em 0;
+	font-size: 1.25em;
+}
+
+.form-help {
+	color: gray;
+}
+
+
+/* Screen failed to render */
+.v-label.screen-failed-to-render {
+	font-weight: bold;
+	font-size: 15em;
+	line-height: 1.2em;
+	padding: 0 0 2em;
+	color: #eee;
+}
+
+
+/* Notifications */
+
+.v-Notification h1, .v-Notification p, .v-Notification-error h1, .v-Notification-error p, .v-Notification-warning h1, .v-Notification-warning p {
+	display: block
+}
+.v-Notification {
+	margin-top: -70px !important;
+}
+.v-Notification-error, .v-Notification-system {
+	margin-top: 0 !important;
+}
+
+
+/* Menu button */
+
+.menu-button > .v-menubar-menuitem, .menu-button > .v-button-wrap {
+	margin: 0 !important;
+	padding: 0.5em 0.6em !important;
+
+	background-color: #fafafa;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.menu-button > .v-menubar-menuitem .v-icon {
+	margin-right: 0;
+}
+
+
+/* To-do annotations */
+.todo-annotations {
+	border: 1px solid #FE9;
+	border-bottom: none;
+	background: #FFF9DD;
+}
+.todo-notes.v-label {
+	font-style: italic;
+	white-space: pre-line;
+}
+.todo-priority {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+/* Fix invisible horizontal scrollbar in tab sheets, #15402 */
+.v-tabsheet-tabsheetpanel {
+	padding-bottom: 15px;
+}
+.v-tabsheet.v-has-height > .v-tabsheet-content > .v-tabsheet-tabsheetpanel {
+	padding-bottom: 0;
+}

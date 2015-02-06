@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.lst</groupId>
+		<artifactId>deployment-automation</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>deployment-automation-vaadin-war</artifactId>
+	<name>LSPS: Application: Vaadin WAR</name>
+	<description>Living Systems Process Suite: Application: Vaadin Application WAR</description>
+	<packaging>war</packaging>
+	<!-- Dependency list -->
+	<dependencies>
+		<dependency>
+			<groupId>com.lst</groupId>
+			<artifactId>deployment-automation-vaadin</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>provided</scope> <!-- Required for SASS compiler to run -->
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <scope>provided</scope> <!-- Required for SASS compiler to run -->
+        </dependency>
+		<dependency>
+			<groupId>com.whitestein.lsps.common</groupId>
+			<artifactId>lsps-common-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+				<configuration>
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+					<webResources>
+						<resource>
+							<directory>${basedir}/src/main/webapp</directory>
+							<filtering>true</filtering>
+							<includes>
+								<include>login.jsp</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>modern</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.vaadin.sass.SassCompiler</mainClass>
+							<arguments>
+								<argument>${basedir}/src/main/webapp/VAADIN/themes/modern/styles.scss</argument>
+								<argument>${basedir}/src/main/webapp/VAADIN/themes/modern/styles.css</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>blue</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.vaadin.sass.SassCompiler</mainClass>
+							<arguments>
+								<argument>${basedir}/src/main/webapp/VAADIN/themes/blue/styles.scss</argument>
+								<argument>${basedir}/src/main/webapp/VAADIN/themes/blue/styles.css</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!-- Skip the normal tests, we'll run them in the integration-test phase -->
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<activation>
+				<property>
+					<name>lsps.verify</name>
+				</property>
+			</activation>
+			<id>default</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+								<configuration>
+									<includes>
+										<include>**/*IntegrationTest*.java</include>
+									</includes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

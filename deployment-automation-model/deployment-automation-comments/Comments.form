@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_js7r4KyJEeSjyY2D8HPWww"
+    name="Comments"
+    newUI="true">
+  <parameters
+      xmi:id="_ltP90KyJEeSjyY2D8HPWww"
+      name="comments"
+      parameterType="Reference&lt;Comments>"/>
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+      xmi:id="_oV1wsKyJEeSjyY2D8HPWww"
+      componentID="$ROOT">
+    <listeners
+        xmi:id="_kUbe0KyLEeSjyY2D8HPWww"
+        listenerType="INIT_LISTENER">
+      <handle>if *comments = null then *comments := new Comments() end</handle>
+    </listeners>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdRepeater"
+        xmi:id="_I19M8KyKEeSjyY2D8HPWww">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdReusable"
+          xmi:id="_tkACMKyKEeSjyY2D8HPWww">
+        <expression><![CDATA[Comment(&comment)]]></expression>
+      </content>
+      <iterator><![CDATA[&comment]]></iterator>
+      <data>toList(comments.comments)</data>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form:NfdUIComponent"
+        xmi:id="_04Gh8KyKEeSjyY2D8HPWww"
+        customComponent="'deployment-automation-ui-lib'::ButtonWithPopup">
+      <customFields
+          xmi:id="_2cMK4KyKEeSjyY2D8HPWww"
+          name="popupContent">
+        <component
+            xsi:type="com.whitestein.lsps.modeler.form:NfdFormLayout"
+            xmi:id="_2cMx8KyKEeSjyY2D8HPWww">
+          <components
+              xsi:type="com.whitestein.lsps.modeler.form:NfdTextArea"
+              xmi:id="_3k6tgKyKEeSjyY2D8HPWww">
+            <binding><![CDATA[&newComment]]></binding>
+          </components>
+        </component>
+      </customFields>
+      <customFields
+          xmi:id="_6zjzwKyKEeSjyY2D8HPWww"
+          name="buttonLabel">
+        <expression><![CDATA["Add"]]></expression>
+      </customFields>
+      <customFields
+          xmi:id="_7lpYAKyKEeSjyY2D8HPWww"
+          name="okExpression">
+        <expression><![CDATA[new Comment(date -> now(), text -> newComment, createdBy -> getCurrentPerson(), comments -> *comments);
+newComment := null;]]></expression>
+      </customFields>
+      <customFields
+          xmi:id="_AhJBoKyLEeSjyY2D8HPWww"
+          name="refreshComponents">
+        <expression>{$ROOT}</expression>
+      </customFields>
+      <customFields
+          xmi:id="_Dl5WoKyMEeSjyY2D8HPWww"
+          name="popupTitle">
+        <expression><![CDATA["Add new comment"]]></expression>
+      </customFields>
+      <customFields
+          xmi:id="_XfJoAK5YEeSsJdpZZuml9w"
+          name="persist">
+        <expression>true</expression>
+      </customFields>
+    </components>
+  </formItem>
+  <variables
+      xmi:id="_OVWN0KyKEeSjyY2D8HPWww"
+      name="comment"
+      variableType="Comment"/>
+  <variables
+      xmi:id="_4TqC0KyKEeSjyY2D8HPWww"
+      name="newComment"
+      variableType="String"/>
+</com.whitestein.lsps.modeler.form:FormDefinition>

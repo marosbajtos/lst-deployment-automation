@@ -1,0 +1,9 @@
+/*@import "../lsps/styles.css";*/
+@import "../reindeer/legacy-styles.css";
+@import "../lsps-widgetset/legacy-styles.css";
+@import "../lsps/widgets.css";
+@import "../lsps/application.css";
+
+@import "page-layout.css";
+
+@import "compatibility.css";

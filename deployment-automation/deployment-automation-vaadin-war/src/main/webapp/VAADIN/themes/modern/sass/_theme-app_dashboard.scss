@@ -1,0 +1,190 @@
+$theme_dashboard_caption_background_color: #f0f0f0 !default;
+$theme_dashboard_caption_padding: 0px 4px 0px 10px !default;
+$theme_dashboard_caption_height: 32px !default;
+$theme_dashboard_widget_background_color: $theme__default_background_color !default;
+$theme_dashboard_widget_border_color: $theme__default_border_color !default;
+$theme_dashboard_ghost_border_color: $theme__default_border_color !default;
+
+.dashWidget-ghost{				//	Style for dashboard ghost when moving/resizing. Has to be here, because it is rendered outside of main theme class.
+	position: absolute;
+	border: 1px dashed $theme_dashboard_ghost_border_color;
+}
+
+@mixin theme-app-dashboard{
+	.v-popupbutton-popup{
+		.ui-widget-option{
+			padding: 4px 8px;
+			border: none;
+			background: none;
+
+			&:hover{
+				background: $theme_inputs_dropdown_item_hover_background_color;
+				color: $theme_inputs_dropdown_item_hover_text_color;	
+			}
+		}
+
+	}
+
+	.ui-dashboard{
+		.dashContainer{
+			overflow: auto;
+		}
+
+		.v-popupbutton{
+			.v-button-caption{
+				font-size: 18px;
+			}
+
+			.v-popup-indicator{
+				display: none;
+			}
+		}
+
+		.dashWidget{
+			border: 1px solid $theme_dashboard_widget_border_color;
+			background: $theme_dashboard_widget_background_color;
+		}
+
+		.v-panel-caption-dashWidget{
+			cursor: move;
+			height: $theme_dashboard_caption_height;
+			box-sizing: border-box;
+			padding: $theme_dashboard_caption_padding;
+			background: $theme_dashboard_caption_background_color;
+			line-height: $theme_dashboard_caption_height;
+			border-bottom: 1px solid $theme_dashboard_widget_border_color;
+
+			span{
+				vertical-align: top;		//	Fix of vaadin middle align
+			}
+		}
+
+		.v-panel-content{
+			border: none;
+		}
+
+		.dashWidget-buttons{
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			.close, .minimize, .restore, .maximize{
+				background: none;
+				border: none;
+				cursor: pointer;
+				margin: 0;
+				padding: 0 4px;
+				height: $theme_dashboard_caption_height;
+
+				&:before{
+					font-family: 'FontAwesome';
+				}
+			}
+
+			.close{
+				margin-right: 4px;
+				&:before{
+					content: "\f00d";
+				}
+			}
+
+			.minimize{
+				&:before{
+					content: "\f068";
+					position: relative;
+					top: 3px;
+				}
+			}
+
+			.maximize{
+				&:before{
+					content: "\f065";
+					font-size: 11px;
+					position: relative;
+					left: 1px;
+				}
+			}
+
+			.restore{
+				&:before{
+					content: "\f066";
+					font-size: 11px;
+					position: relative;
+					left: 1px;
+				}
+			}
+		}
+
+		// copied from Vaadin
+		.dashWidget-handle {
+			position: absolute;
+			font-size: 0.1px;
+			z-index: 99999;
+			display: block;
+		}
+
+		.dashWidget-handle-n {
+			cursor: n-resize;
+			height: 7px;
+			width: 100%;
+			top: -5px;
+			left: 0;
+		}
+
+		.dashWidget-handle-s {
+			cursor: s-resize;
+			height: 7px;
+			width: 100%;
+			bottom: -5px;
+			left: 0;
+		}
+
+		.dashWidget-handle-e {
+			cursor: e-resize;
+			width: 7px;
+			right: -5px;
+			top: 0;
+			height: 100%;
+		}
+
+		.dashWidget-handle-w {
+			cursor: w-resize;
+			width: 7px;
+			left: -5px;
+			top: 0;
+			height: 100%;
+		}
+
+		.dashWidget-handle-se {
+			cursor: se-resize;
+			width: 9px;
+			height: 9px;
+			right: -5px;
+			bottom: -5px;
+		}
+
+		.dashWidget-handle-sw {
+			cursor: sw-resize;
+			width: 9px;
+			height: 9px;
+			left: -5px;
+			bottom: -5px;
+		}
+
+		.dashWidget-handle-nw {
+			cursor: nw-resize;
+			width: 9px;
+			height: 9px;
+			left: -5px;
+			top: -5px;
+		}
+
+		.dashWidget-handle-ne {
+			cursor: ne-resize;
+			width: 9px;
+			height: 9px;
+			right: -5px;
+			top: -5px;
+		}
+	}
+}

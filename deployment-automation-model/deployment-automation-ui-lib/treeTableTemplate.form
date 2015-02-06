@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_buNIwIIVEeOW5J1ZxlJ6Ng"
+    name="treeTableTemplate"
+    newUI="true">
+  <parameters
+      xmi:id="_DRgeUIOfEeOW5J1ZxlJ6Ng"
+      name="data"
+      parameterType="{:Collection&lt;TreeItem>}"/>
+  <parameters
+      xmi:id="_AMB3AILiEeOW5J1ZxlJ6Ng"
+      name="iterator"
+      parameterType="Reference&lt;Record>"/>
+  <parameters
+      xmi:id="_sx5B8K4NEeS_NIdAnGdScA"
+      name="treeItemIterator"
+      parameterType="Reference&lt;TreeItem>"/>
+  <parameters
+      xmi:id="_x6K2IIElEeSuo7Cj3SiASw"
+      name="editedItemRef"
+      parameterType="Reference&lt;Record>"/>
+  <parameters
+      xmi:id="_SYom0ILhEeOW5J1ZxlJ6Ng"
+      name="addExpression"
+      parameterType="{:Record}"/>
+  <parameters
+      xmi:id="___twwOvFEeO_nbNtzwRp-Q"
+      name="editExpression"
+      parameterType="{:Object}"/>
+  <parameters
+      xmi:id="_Z6_YwJflEeSoofVDs9vWsQ"
+      name="moveExpression"
+      parameterType="{MoveAction:Object}">
+    <description>Optional. Expression to define move action on row</description>
+  </parameters>
+  <parameters
+      xmi:id="_qwg8sJfrEeSoofVDs9vWsQ"
+      name="isMoveEnabled"
+      parameterType="{MoveAction:Boolean}">
+    <description>Optional. Expression evaluated for every row, wheter it is movable or not</description>
+  </parameters>
+  <parameters
+      xmi:id="_NiDngILjEeOW5J1ZxlJ6Ng"
+      name="removeExpression"
+      parameterType="{:Object}">
+    <description></description>
+  </parameters>
+  <parameters
+      xmi:id="_Xn-R0IRHEeO_V6N86-a5FQ"
+      name="isTableRowReadOnly"
+      parameterType="Reference&lt;{:Boolean}>"/>
+  <parameters
+      xmi:id="_Pb2RkIc_EeO_V6N86-a5FQ"
+      name="okExpression"
+      parameterType="{:Object}"/>
+  <parameters
+      xmi:id="__C3xkI9NEeOn-o88eAvENQ"
+      name="columns"
+      parameterType="List&lt;TableColumn>"/>
+  <parameters
+      xmi:id="_2aEI4IElEeSuo7Cj3SiASw"
+      name="editPopup"
+      parameterType="UIComponent"/>
+  <parameters
+      xmi:id="_2OiTcIHXEeSZKvDVH4tOsQ"
+      name="popupTitle"
+      parameterType="{TableAction:String}"/>
+  <parameters
+      xmi:id="_bClZsJfeEeO1p4656L7t1Q"
+      name="showActionToolbar"
+      parameterType="{:Boolean}">
+    <description></description>
+  </parameters>
+  <parameters
+      xmi:id="_RVvrgJffEeO1p4656L7t1Q"
+      name="allowAdd"
+      parameterType="{:Boolean}"/>
+  <parameters
+      xmi:id="_Y6s1QJfgEeO1p4656L7t1Q"
+      name="allowEdit"
+      parameterType="{:Boolean}"/>
+  <parameters
+      xmi:id="_ab9MoJfgEeO1p4656L7t1Q"
+      name="allowRemove"
+      parameterType="{:Boolean}"/>
+  <parameters
+      xmi:id="_Uz-TUJcvEeSdG9PZ48pEGg"
+      name="allowMove"
+      parameterType="{:Boolean}">
+    <description>Optional. Default = false. Option to show move buttons</description>
+  </parameters>
+  <parameters
+      xmi:id="_Iq30AL8ZEeOwLPANO1Hs-A"
+      name="additionalHint"
+      parameterType="{:Map&lt;String, Object>}">
+    <description></description>
+  </parameters>
+  <parameters
+      xmi:id="_xOGY0L8eEeOo_uymG6zlrQ"
+      name="okValidation"
+      parameterType="{:List&lt;ConstraintViolation>}"/>
+  <parameters
+      xmi:id="_1yfVQGjsEeSrS6kj8zuN-w"
+      name="okListeners"
+      parameterType="Set&lt;ActionListener>">
+    <description>Optional (OK button) listeners</description>
+  </parameters>
+  <parameters
+      xmi:id="_FeWBkGtHEeSBS_ohgoJEwA"
+      name="editListeners"
+      parameterType="Set&lt;ActionListener>">
+    <description>Optional (EDIT button) listeners</description>
+  </parameters>
+  <parameters
+      xmi:id="_4plR8HFiEeSnlJzgFw0d2g"
+      name="addListeners"
+      parameterType="Set&lt;ActionListener>">
+    <description>Optional (ADD button) listeners</description>
+  </parameters>
+  <parameters
+      xmi:id="_e0VTsKCgEeSI6KVANKgpGA"
+      name="removeListeners"
+      parameterType="Set&lt;ActionListener>">
+    <description>Optional (REMOVE button) listeners</description>
+  </parameters>
+  <parameters
+      xmi:id="_jrgY8IHeEeSZKvDVH4tOsQ"
+      name="tableAction"
+      parameterType="Reference&lt;TableAction>"/>
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdViewModel"
+      xmi:id="_ia4SUIKoEeOW5J1ZxlJ6Ng"
+      componentID="$VM">
+    <hints
+        xmi:id="_t46IUOSyEeOGBbRepxxAnQ"
+        key="height"
+        option="Fill Parent"/>
+    <child
+        xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+        xmi:id="_ia4SUYKoEeOW5J1ZxlJ6Ng">
+      <hints
+          xmi:id="_miaoEIKrEeOW5J1ZxlJ6Ng"
+          key="height"
+          option="Fill Parent"/>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdTreeTable2"
+          xmi:id="_mMA6IK4NEeS_NIdAnGdScA"
+          componentID="$THE_TABLE">
+        <hints
+            xmi:id="__7P4cK4NEeS_NIdAnGdScA"
+            key="height"
+            option="Fill Parent"/>
+        <hints
+            xmi:id="_A5j60K4OEeS_NIdAnGdScA"
+            key="expand"
+            option="Full"/>
+        <columns
+            xmi:id="_3wLsEILhEeOW5J1ZxlJ6Ng">
+          <content
+              xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+              xmi:id="_qwURwIHZEeSZKvDVH4tOsQ"
+              horizontal="true">
+            <components
+                xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                xmi:id="_q6ikwIHZEeSZKvDVH4tOsQ">
+              <child
+                  xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+                  xmi:id="_q6ikwYHZEeSZKvDVH4tOsQ"
+                  horizontal="true">
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_rdYzIIHZEeSZKvDVH4tOsQ">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                      xmi:id="_FR4r8IHaEeSZKvDVH4tOsQ">
+                    <listeners
+                        xmi:id="_YGASQIHaEeSZKvDVH4tOsQ"
+                        listenerType="ACTION_LISTENER"
+                        refresh="$MODIFY_DIALOG">
+                      <handle><![CDATA[*editedItemRef := *iterator;
+
+if editPopup != null then
+	*tableAction := TableAction.SHOW;
+	showPopup := true;
+end;]]></handle>
+                    </listeners>
+                    <text><![CDATA["Show"]]></text>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show><![CDATA[//show detail icon whenever edit icon is not displayed and popup is available
+editPopup != null and
+(
+	(showActionToolbar != null and not showActionToolbar()) or
+	(allowEdit != null and not allowEdit())
+)]]></show>
+                </components>
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_q6ikwoHZEeSZKvDVH4tOsQ"
+                    componentID="$CITIZENSHIP_EDIT">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                      xmi:id="_q6ikw4HZEeSZKvDVH4tOsQ"
+                      componentID="$EDIT_ACTION_LINK">
+                    <listeners
+                        xmi:id="_q6ikxIHZEeSZKvDVH4tOsQ"
+                        listenerType="ACTION_LISTENER"
+                        refresh="$THE_TABLE, $MODIFY_DIALOG">
+                      <handle><![CDATA[*editedItemRef := *iterator;
+
+if editPopup != null then
+	*tableAction := TableAction.EDIT;
+	showPopup := true;
+end;
+
+if editExpression != null then
+	editExpression()
+end]]></handle>
+                    </listeners>
+                    <text><![CDATA["Edit"]]></text>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show>editEnabled(*editedItemRef, *iterator) and (allowEdit = null or allowEdit())</show>
+                </components>
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_q6ikx4HZEeSZKvDVH4tOsQ"
+                    componentID="$CITIZENSHIP_OK">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                      xmi:id="_q6ikyIHZEeSZKvDVH4tOsQ"
+                      componentID="$OK_ACTION_LINK">
+                    <listeners
+                        xmi:id="_q6ikyYHZEeSZKvDVH4tOsQ"
+                        listenerType="ACTION_LISTENER"
+                        refresh="$THE_TABLE"
+                        mergeViewModel="$VM">
+                      <handle><![CDATA[*editedItemRef := null;
+
+if okExpression != null then
+	okExpression()
+end]]></handle>
+                      <dataValidation>if okValidation != null then okValidation() ?? [] else [] end</dataValidation>
+                    </listeners>
+                    <text><![CDATA["Ok"]]></text>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show>editPopup = null and saveEnabled(*editedItemRef, *iterator)</show>
+                </components>
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_q6ikzIHZEeSZKvDVH4tOsQ"
+                    componentID="$CITIZENSHIP_CANCEL">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                      xmi:id="_q6ikzYHZEeSZKvDVH4tOsQ">
+                    <listeners
+                        xmi:id="_q6ikzoHZEeSZKvDVH4tOsQ"
+                        listenerType="ACTION_LISTENER"
+                        refresh="$THE_TABLE"
+                        executeOnlyIfVisible=""
+                        clearViewModel="$VM"
+                        mergeViewModel=""
+                        description="">
+                      <handle></handle>
+                      <viewModelInit></viewModelInit>
+                    </listeners>
+                    <text><![CDATA["Cancel"]]></text>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show>editPopup = null and cancelEnabled(*editedItemRef, *iterator)</show>
+                </components>
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_q6ik0YHZEeSZKvDVH4tOsQ"
+                    componentID="$CITIZENSHIP_REMOVE">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                      xmi:id="_q6ik0oHZEeSZKvDVH4tOsQ"
+                      componentID="$REMOVE_ACTION_LINK">
+                    <listeners
+                        xmi:id="_q6ik04HZEeSZKvDVH4tOsQ"
+                        listenerType="ACTION_LISTENER"
+                        refresh="$THE_TABLE"
+                        mergeViewModel="$VM">
+                      <handle><![CDATA[if removeExpression = null then
+	deleteRecords(*iterator)
+else
+	removeExpression()
+end;
+*editedItemRef := null]]></handle>
+                    </listeners>
+                    <text><![CDATA["Remove"]]></text>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show>removeEnabled(*editedItemRef, *iterator) and (allowRemove = null or allowRemove())</show>
+                </components>
+                <components
+                    xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                    xmi:id="_RJBrkJcvEeSdG9PZ48pEGg">
+                  <child
+                      xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+                      xmi:id="_SI8YwJflEeSoofVDs9vWsQ"
+                      horizontal="true">
+                    <components
+                        xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                        xmi:id="_SI8YwZflEeSoofVDs9vWsQ">
+                      <listeners
+                          xmi:id="_SI8YwpflEeSoofVDs9vWsQ"
+                          listenerType="ACTION_LISTENER"
+                          refresh="$THE_TABLE"
+                          mergeViewModel="$VM">
+                        <handle><![CDATA[if moveExpression != null then 
+	moveExpression(MoveAction.UP);
+end]]></handle>
+                      </listeners>
+                      <text><![CDATA["Move up"]]></text>
+                      <disabledExpression>not isMoveEnabled(MoveAction.UP)</disabledExpression>
+                    </components>
+                    <components
+                        xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+                        xmi:id="_SI8YxZflEeSoofVDs9vWsQ">
+                      <listeners
+                          xmi:id="_SI8YxpflEeSoofVDs9vWsQ"
+                          listenerType="ACTION_LISTENER"
+                          refresh="$THE_TABLE"
+                          mergeViewModel="$VM">
+                        <handle><![CDATA[if moveExpression != null then
+	moveExpression(MoveAction.DOWN);
+end;]]></handle>
+                      </listeners>
+                      <text><![CDATA["Move down"]]></text>
+                      <disabledExpression>not isMoveEnabled(MoveAction.DOWN)</disabledExpression>
+                    </components>
+                  </child>
+                  <visibleExpression></visibleExpression>
+                  <show>allowMove != null and allowMove() </show>
+                </components>
+              </child>
+              <visibleExpression></visibleExpression>
+              <show>showActionToolbar = null or showActionToolbar()</show>
+            </components>
+          </content>
+          <header><![CDATA[""]]></header>
+          <shown></shown>
+        </columns>
+        <excludeValidationError>{ ve -> true }</excludeValidationError>
+        <root>data()</root>
+        <iterator>iterator</iterator>
+        <treeItemIterator>treeItemIterator</treeItemIterator>
+      </components>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdPopup"
+          xmi:id="_v_cj8YEnEeSuo7Cj3SiASw"
+          componentID="$MODIFY_DIALOG">
+        <child
+            xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+            xmi:id="_v_cj84EnEeSuo7Cj3SiASw">
+          <components
+              xsi:type="com.whitestein.lsps.modeler.form:NfdExpression"
+              xmi:id="_BpbSYIEoEeSuo7Cj3SiASw">
+            <expression>editPopup != null ? editPopup : new VerticalLayout()</expression>
+          </components>
+          <components
+              xsi:type="com.whitestein.lsps.modeler.form:NfdLayout"
+              xmi:id="_v_cj9YEnEeSuo7Cj3SiASw"
+              horizontal="true">
+            <components
+                xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+                xmi:id="_pc2RQJcuEeSdG9PZ48pEGg">
+              <child
+                  xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+                  xmi:id="_v_cj9oEnEeSuo7Cj3SiASw"
+                  componentID="$OK_BUTTON_POPUP">
+                <listeners
+                    xmi:id="_9pggMIEnEeSuo7Cj3SiASw"
+                    listenerType="ACTION_LISTENER"
+                    refresh="$THE_TABLE, $MODIFY_DIALOG"
+                    mergeViewModel="$VM">
+                  <handle><![CDATA[if okExpression != null then
+	//make sure that iterator is set to edited object in order to provide consistency from previous behaviour
+	*iterator := *editedItemRef;
+	okExpression()
+end;
+*editedItemRef := null;
+showPopup := false;]]></handle>
+                  <dataValidation><![CDATA[if okValidation != null then 
+	*iterator := *editedItemRef;
+	okValidation() ?? [] 
+else 
+	[] 
+end
+]]></dataValidation>
+                </listeners>
+                <text><![CDATA[switch *tableAction 
+	case TableAction.ADD -> "Add"
+	case TableAction.EDIT -> "Save"
+end]]></text>
+              </child>
+              <visibleExpression></visibleExpression>
+              <show>*tableAction != TableAction.SHOW</show>
+            </components>
+            <components
+                xsi:type="com.whitestein.lsps.modeler.form:NfdButton"
+                xmi:id="_v_cj-oEnEeSuo7Cj3SiASw">
+              <listeners
+                  xmi:id="_AQaRAIEoEeSuo7Cj3SiASw"
+                  listenerType="ACTION_LISTENER"
+                  refresh="$THE_TABLE, $MODIFY_DIALOG"
+                  clearViewModel="$VM">
+                <handle>showPopup := false</handle>
+              </listeners>
+              <text><![CDATA[if *tableAction != TableAction.SHOW then 
+	"Cancel"
+else
+	"Close"
+end]]></text>
+            </components>
+          </components>
+        </child>
+        <additionalHints></additionalHints>
+        <visibleExpression></visibleExpression>
+        <title><![CDATA[popupTitle != null ? popupTitle(*tableAction) : "";]]></title>
+        <modalExpression>true</modalExpression>
+        <show>showPopup = true</show>
+      </components>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdConditional"
+          xmi:id="_3b5GoIKrEeOW5J1ZxlJ6Ng"
+          componentID="$ADD">
+        <child
+            xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+            xmi:id="_3b5GooKrEeOW5J1ZxlJ6Ng"
+            componentID="$ADD_ACTION_LINK">
+          <listeners
+              xmi:id="_3b5Go4KrEeOW5J1ZxlJ6Ng"
+              listenerType="ACTION_LISTENER"
+              refresh="$THE_TABLE, $MODIFY_DIALOG">
+            <validators
+                xmi:id="_3b5GpIKrEeOW5J1ZxlJ6Ng"
+                placement="">
+              <message><![CDATA[if *editedItemRef != null then "Please save your changes before adding new item" else null end]]></message>
+            </validators>
+            <handle><![CDATA[*editedItemRef := addExpression();
+if editPopup != null then
+	*tableAction := TableAction.ADD;
+	showPopup := true;
+end;]]></handle>
+          </listeners>
+          <text><![CDATA["Add"]]></text>
+        </child>
+        <visibleExpression></visibleExpression>
+        <show>allowAdd = null or allowAdd()</show>
+      </components>
+      <components
+          xsi:type="com.whitestein.lsps.modeler.form:NfdExpression"
+          xmi:id="_tbKUAI9NEeOn-o88eAvENQ">
+        <expression><![CDATA[// insert provided columns from form parameter
+$THE_TABLE.columns := addAll(columns, $THE_TABLE.columns);
+
+// set output parameter
+*isTableRowReadOnly := { -> (editPopup != null) or readOnly(*editedItemRef, *iterator)};
+
+// additional listeners on OK button
+// if there is edit popup defined, the listeners are attached to popup OK button
+if okListeners != null then
+	if editPopup = null then
+		$OK_ACTION_LINK.listeners := addAll($OK_ACTION_LINK.listeners ?? {}, okListeners)
+	else 
+		$OK_BUTTON_POPUP.listeners := addAll($OK_ACTION_LINK.listeners ?? {}, okListeners)
+	end;
+end;
+
+// additional listeners on EDIT button
+if editListeners != null then
+	$EDIT_ACTION_LINK.listeners := addAll($EDIT_ACTION_LINK.listeners ?? {}, editListeners)
+end;
+
+// additional listeners on ADD button
+if addListeners != null then
+	$ADD_ACTION_LINK.listeners := addAll($ADD_ACTION_LINK.listeners ?? {}, addListeners)
+end;
+
+// additional listeners on REMOVE button
+if removeListeners != null then
+	$REMOVE_ACTION_LINK.listeners := addAll($REMOVE_ACTION_LINK.listeners ?? {}, removeListeners)
+end;
+
+// null ui component should be handled gracefully by LSPS
+null]]></expression>
+      </components>
+    </child>
+    <additionalHints>additionalHint != null ? additionalHint() : [->];</additionalHints>
+  </formItem>
+  <variables
+      xmi:id="_pxaJ0IEmEeSuo7Cj3SiASw"
+      name="showPopup"
+      variableType="Boolean">
+    <initialValueExpression>false</initialValueExpression>
+  </variables>
+</com.whitestein.lsps.modeler.form:FormDefinition>

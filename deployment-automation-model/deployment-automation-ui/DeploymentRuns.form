@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form:FormDefinition
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form="http:///com/whitestein/lsps/modeler/form.ecore"
+    xmi:id="_dudZAK5PEeSsJdpZZuml9w"
+    name="DeploymentRuns"
+    newUI="true">
+  <formItem
+      xsi:type="com.whitestein.lsps.modeler.form:NfdTable"
+      xmi:id="_eSFDcK5PEeSsJdpZZuml9w"
+      dataKind="TYPE">
+    <columns
+        xmi:id="_s6Rb4K5PEeSsJdpZZuml9w">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdActionLink"
+          xmi:id="_2fj7IK5PEeSsJdpZZuml9w">
+        <listeners
+            xmi:id="_O_3oMK5QEeSsJdpZZuml9w"
+            listenerType="ACTION_LISTENER">
+          <navigationAction
+              xmi:id="_O_3oMa5QEeSsJdpZZuml9w">
+            <navigation><![CDATA[new DocumentNavigation(documentType -> DeploymentRunDetail(), parameters -> ["runId" -> run.id])]]></navigation>
+          </navigationAction>
+        </listeners>
+        <text>run.description</text>
+      </content>
+      <header><![CDATA["Description"]]></header>
+    </columns>
+    <columns
+        xmi:id="_uV0M0K5PEeSsJdpZZuml9w">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+          xmi:id="_RQ_9UK5QEeSsJdpZZuml9w">
+        <content>getPersonFullName(run.createdBy)</content>
+      </content>
+      <header><![CDATA["Created by"]]></header>
+    </columns>
+    <columns
+        xmi:id="_n3OYwK5PEeSsJdpZZuml9w">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+          xmi:id="_TSCA8K5QEeSsJdpZZuml9w">
+        <content>run.started</content>
+      </content>
+      <header><![CDATA["Started"]]></header>
+    </columns>
+    <columns
+        xmi:id="_p9I8YK5PEeSsJdpZZuml9w">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+          xmi:id="_UQFkoK5QEeSsJdpZZuml9w">
+        <content>run.finished</content>
+      </content>
+      <header><![CDATA["Finished"]]></header>
+    </columns>
+    <columns
+        xmi:id="_ykP8IK5PEeSsJdpZZuml9w">
+      <content
+          xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
+          xmi:id="_VXG3EK5QEeSsJdpZZuml9w">
+        <content><![CDATA[run.success ? "Yes" : "No"]]></content>
+      </content>
+      <header><![CDATA["Success"]]></header>
+    </columns>
+    <iterator><![CDATA[&run]]></iterator>
+    <data><![CDATA[type(DeploymentRun)
+]]></data>
+  </formItem>
+  <variables
+      xmi:id="_lwhK8K5PEeSsJdpZZuml9w"
+      name="run"
+      variableType="DeploymentRun"/>
+</com.whitestein.lsps.modeler.form:FormDefinition>

@@ -1,0 +1,444 @@
+/* VAADIN WIDGETS STYLING */
+
+
+/* Page background, base fonts */
+
+.v-generated-body, .v-app {
+	background-color: #aaa;
+}
+.v-ui {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.v-app, .v-window, .v-widget, .v-popupview-popup, .v-tooltip, .v-caption,
+.v-app input, .v-app select, .v-app button, .v-app textarea, 
+.v-window input, .v-window select, .v-window button, .v-window textarea, 
+.v-popupview-popup input, .v-popupview-popup select, .v-popupview-popup button, .v-popupview-popup textarea, 
+.v-filterselect-suggestpopup, .v-datefield-popup, .v-contextmenu, .v-Notification, .v-menubar-submenu, .v-drag-element,
+.v-table-table, .v-table-header-drag, .v-button-link .v-button-caption {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #222;
+}
+
+
+/* Field captions and validation */
+
+.v-required-field-indicator {
+	color: #F09300;
+}
+.v-formlayout-captioncell {
+	text-align: left;
+}
+
+
+/* Allow content of some widgets to overflow */
+
+.ui-allow-overflow {
+	overflow: visible;
+}
+.ui-wrapper {
+	display: inline-block !important;
+	padding: 8px;
+}
+
+
+/* Buttons */
+
+.v-button, .v-disabled.v-button {
+	height: auto;
+	background: none;
+	padding: 0;
+	margin-bottom: 1px;
+}
+.v-button:active, .v-button:focus, .v-button.v-pressed {
+	background: none;
+}
+
+.v-button-wrap, .v-disabled.v-button .v-button-wrap, .v-disabled.v-button:hover .v-button-wrap {
+	height: auto;
+	padding: 0.3em 1.7em;
+	border: 1px solid #ddd;
+	background: #F6F6F6;
+	background-image: -webkit-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: -moz-linear-gradient(top, #fefefe, #f6f6f6);
+	background-image: linear-gradient(top, #fefefe, #f6f6f6);
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	outline: none;
+}
+.v-button-caption, .v-disabled.v-button:hover .v-button-caption {
+	color: #333;
+	text-shadow: none;
+	font-weight: normal;
+}
+.v-button:hover .v-button-wrap, .v-button:focus .v-button-wrap {
+	border-color: #f09300;
+	background: #f09300;
+	background-image: -webkit-linear-gradient(top, #ffaa00, #f09300);
+	background-image: -moz-linear-gradient(top, #ffaa00, #f09300);
+	background-image: linear-gradient(top, #ffaa00, #f09300);
+	color: #fff;
+}
+.v-button:hover .v-button-caption, .v-button:focus .v-button-caption {
+	color: #fff;
+}
+
+.v-button:active .v-button-wrap {
+	border: 1px solid #ddd;
+	background: #fff;
+	color: #f09300;
+}
+.v-button:active .v-button-caption {
+	color: #f09300;
+}
+
+
+/* Links */
+
+.v-button.v-button-link .v-button-wrap /*, .v-button.v-nativebutton-link .v-button-wrap*/,
+.v-button.v-disabled.v-button-link:hover .v-button-wrap /*, .v-button.v-disabled.v-nativebutton-link:hover .v-button-wrap,*/ {
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+.v-link a:link span,
+.v-button-link .v-button-caption/*, .v-nativebutton-link .v-nativebutton-caption*/,
+.v-button.v-disabled.v-button-link:hover .v-button-caption /*, .v-button.v-disabled.v-nativebutton-link:hover .v-button-caption,*/ {
+	color: #f09300;
+}
+.v-link a:link:hover span, .v-link a:link:active span, .v-link a:link:focus span,
+.v-button-link:hover .v-button-caption/*, .v-nativebutton-link:hover .v-nativebutton-caption*/,
+.v-button-link:active .v-button-caption/*, .v-nativebutton-link:active .v-nativebutton-caption*/,
+.v-button-link:focus .v-button-caption/*, .v-nativebutton-link:focus .v-nativebutton-caption*/ {
+	color: #d07300;
+}
+.v-link a:link:visited span {
+	color: #d07300;
+}
+
+/* Collapsible planel */
+
+.ui-panel-toggle .v-button-wrap .v-button-caption {
+	color: inherit;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: inherit;
+	vertical-align: middle;
+}
+.ui-panel-toggle.v-button.collapsible, .ui-panel-toggle.v-button.collapsed {
+	padding-left: 16px;
+	background: url(../lsps-base/img/toggle-collapse.png) left center no-repeat; 
+}
+.ui-panel-toggle.v-button.collapsed {
+	background-image: url(../lsps-base/img/toggle-expand.png); 
+}
+.ui-panel-toggle.v-button:hover .v-button-caption,  .ui-panel-toggle.v-button:focus .v-button-caption {
+	color: #222222;
+}
+
+/* Dashboard */
+
+.ui-dashboard {
+	border: 1px solid #ddd;
+}
+.ui-dashboard-toolbar {
+	display: block;
+	padding: 5px 10px;
+	
+	border-bottom: 1px solid #ddd;
+
+	background: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: -moz-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: linear-gradient(top, #fcfcfc, #f8f8f8);
+}
+.ui-dashboard-popup .v-button-caption {
+	font-size: 150%;
+	font-weight: bold;
+}
+.ui-dashboard-popup.v-popupbutton .v-popup-indicator {
+	display: none;
+}
+.ui-dashboard .dashWidget {
+	-moz-box-shadow: 2px 2px 2px #bbb;
+	-webkit-box-shadow: 2px 2px 2px #bbb;
+	box-shadow: 2px 2px 2px #bbb;
+}
+.ui-dashboard .dashWidget .v-panel-caption {
+	padding: 0.35em 0.7em;
+	color: #333;
+	border: 1px solid #ddd;
+	background: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: -moz-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: linear-gradient(top, #fcfcfc, #f8f8f8);
+}
+.ui-dashboard .dashWidget .v-panel-content-dashWidget {
+	border-width: 0 0 0 1px;
+}
+.ui-widget-option {
+	display:block;
+	float:left;
+	margin:0 7px 0 0;
+	background-color:#f5f5f5;
+	border:1px solid #dedede;
+	border-top:1px solid #eee;
+	border-left:1px solid #eee;
+	font-size:100%;
+	line-height:130%;
+	text-decoration:none;
+	font-weight:bold;
+	color:#565656;
+	cursor:pointer;
+	padding:5px 10px 6px 7px; /* Links */
+	text-align: right;
+}
+.ui-widget-option.selected {
+	background-color:#757575;
+	color:#f5f5f5;
+	text-align: right;
+}
+
+/* Text-fields and text-areas */
+
+.v-textfield,
+.v-textarea {
+	background: #fff;
+	border: 1px solid #ddd;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.v-app .v-textfield:focus,
+.v-app .v-textarea:focus,
+.v-app .v-textfield-focus,
+.v-window .v-textfield-focus,
+.v-popupview-popup .v-textfield-focus,
+.v-app .v-textarea-focus,
+.v-window .v-textarea-focus,
+.v-popupview-popup .v-textarea-focus {
+	border-color: #aaa;
+	outline: none;
+}
+input.v-textfield-prompt, textarea.v-textarea-prompt {
+	color: #999;
+}
+
+.v-datefield-day .v-datefield-textfield {
+	width: 6.5em;
+}
+
+
+/* List selects */
+
+.v-select select {
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 2px;
+	min-width: 10em;
+}
+
+
+/* Option groups */
+
+.v-select-optiongroup.ui-spacing {
+	padding: 0.5em 1em 0.75em;
+}
+.v-checkbox.ui-spacing {
+	padding: 0.5em 0 0.75em;
+}
+
+.v-select-optiongroup.layout-horizontal .v-select-option {
+    display: inline-block;
+    padding-right: 1.2em;
+}
+
+/* 
+ * Checkboxes and radios
+ * IE8 does not support :checked pseudoclass, therefore we use not() so that it uses native look 
+ */
+
+.v-checkbox label, .v-radiobutton label {
+	padding-left: 0.3em
+}
+.v-radiobutton:not(#foo) input, 
+.v-checkbox:not(#foo) input {
+    /* Hide the input, but have it still be clickable */
+    opacity: 0;
+    width: 16px;
+    margin-right: -16px;
+}
+.v-radiobutton:not(#foo) label,
+.v-checkbox:not(#foo) label {
+    /* Left padding makes room for image */
+    padding: 2px 0 2px 24px;
+    cursor: pointer;
+}
+
+.v-radiobutton:not(#foo) label {
+    background: url(../lsps-base/img/radio.png) 0 0 no-repeat; 
+}
+.v-checkbox:not(#foo) label {
+    background: url(../lsps-base/img/checkbox.png) 0 0 no-repeat; 
+}
+
+.v-radiobutton:not(#foo) input:hover + label,
+.v-checkbox:not(#foo) input:hover + label,
+.v-radiobutton:not(#foo) input:focus + label,
+.v-checkbox:not(#foo) input:focus + label {
+    background-position: 0 -40px;
+}
+.v-radiobutton:not(#foo) input:active + label,
+.v-checkbox:not(#foo) input:active + label {
+    background-position: 0 -20px;
+}
+.v-radiobutton:not(#foo) input:disabled + label,
+.v-checkbox:not(#foo) input:disabled + label {
+    background-position: 0 -60px;
+}
+
+.v-radiobutton:not(#foo) input:checked + label,
+.v-checkbox:not(#foo) input:checked + label {
+    background-position: 0 -80px;
+}
+.v-radiobutton:not(#foo) input:checked:hover + label,
+.v-checkbox:not(#foo) input:checked:hover + label,
+.v-radiobutton:not(#foo) input:checked:focus + label,
+.v-checkbox:not(#foo) input:checked:focus + label {
+    background-position: 0 -120px;
+}
+.v-radiobutton:not(#foo) input:checked:active + label,
+.v-checkbox:not(#foo) input:checked:active + label {
+    background-position: 0 -100px;
+}
+.v-radiobutton:not(#foo) input:checked:disabled + label,
+.v-checkbox:not(#foo) input:checked:disabled + label {
+    background-position: 0 -140px;
+}
+
+
+/* Table */
+
+.v-table-header-wrap, .white .v-table-header-wrap, .v-table-footer-wrap, .white .v-table-footer-wrap, .v-table-header-drag {
+	text-transform: none;
+	text-shadow: none;
+	font-weight: normal;
+	font-size: inherit;
+	/*border-color: #ddd;
+	background: #eee;
+	background-image: -webkit-linear-gradient(top, #fafafa, #eee);
+	background-image: -moz-linear-gradient(top, #fafafa, #eee);
+	background-image: linear-gradient(top, #fafafa, #eee);*/
+}
+.v-table-resizer {
+	width: 5px;
+}
+/*.v-table-body {
+	border-top: none;
+}
+.v-table-row, .v-table-row-odd {
+	border-top: 1px solid #ddd;
+}
+.v-table-row-odd {
+	background-color: #fff;
+}
+.v-table-cell-content {
+	border-top: 1px solid #ddd;
+}*/
+
+.v-table-cell-content {
+	padding: 2px 6px;
+}
+.v-touch .v-table-cell-content {
+	padding: 6px 6px;
+}
+
+.v-table .v-selected, .black .v-table .v-selected {
+	background: #f09300;
+	background-image: -webkit-linear-gradient(top, #ffaa00, #f09300);
+	background-image: -moz-linear-gradient(top, #ffaa00, #f09300);
+	background-image: linear-gradient(top, #ffaa00, #f09300);
+	text-shadow: none;
+	color: #fff;
+}
+.v-table .v-selected .v-table-cell-content {
+	border-right: 1px solid #f09300;
+}
+
+
+/* Context menu */
+
+.v-contextmenu .gwt-MenuItem-selected {
+	background: #f09300;
+	background-image: -webkit-linear-gradient(top, #ffaa00, #f09300);
+	background-image: -moz-linear-gradient(top, #ffaa00, #f09300);
+	background-image: linear-gradient(top, #ffaa00, #f09300);
+	text-shadow: none;
+}
+
+/* Pager */
+
+.ui-pager {
+	padding: 4px 0;
+}
+.ui-pager .v-button-wrap, .ui-pager .v-button.v-disabled .v-button-wrap, .ui-pager .v-textfield {
+	padding: 0.3em 0.6em;
+	margin-left: -0.2em;
+}
+
+/* Menu bar */
+
+.v-menubar {
+	height: auto;
+	padding: 0;
+	background: #ccc;
+	overflow: visible;
+}
+.v-menubar .v-menubar-menuitem, .v-menubar.v-disabled .v-menubar-menuitem:hover {
+	height: auto;
+	line-height: 1.5em;
+	padding: 10px 20px;
+	margin: 0 0 -1px -1px;
+
+	color: #333;
+	background: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: -moz-linear-gradient(top, #fcfcfc, #f8f8f8);
+	background-image: linear-gradient(top, #fcfcfc, #f8f8f8);
+	border: 1px solid #ddd;
+	text-shadow: none;
+	/*text-transform: uppercase;*/
+}
+.v-menubar .v-menubar-menuitem:hover, .v-menubar .v-menubar-menuitem-selected {
+	color: #fff;
+	border-color: #f09300;
+	background: #f09300;
+	background-image: -webkit-linear-gradient(top, #ffaa00, #f09300);
+	background-image: -moz-linear-gradient(top, #ffaa00, #f09300);
+	background-image: linear-gradient(top, #ffaa00, #f09300);
+	position: relative;
+	z-index: 1;
+}
+.v-menubar .v-menubar-menuitem-active {
+	color: #f09300;
+	background: #fff;
+}
+
+.v-menubar-submenu .v-menubar-menuitem {
+	padding: 5px 20px;
+	/*line-height: 1.5em;*/
+	color: #333;
+}
+.v-menubar-submenu .v-menubar-menuitem:hover, .v-menubar-submenu .v-menubar-menuitem-selected {
+	background: none;
+	text-shadow: none;
+	text-decoration: underline;
+}
+.v-menubar-submenu .v-menubar-menuitem-selected .v-menubar-submenu-indicator {
+	background: transparent url(../reindeer/menubar/img/submenu-icon.png) no-repeat right 70%;
+}
+
+

@@ -1,0 +1,26 @@
+@mixin theme-app-error{
+    .l-helperWrapper-padded,
+    .l-required-padded {
+        padding-right: 17px;
+        position: relative;
+
+      .v-errorindicator{
+          position: absolute;
+          top: 0;
+          right: 0;
+      }
+      .v-required-field-indicator{
+          position: absolute;
+          top: 0;
+          right: 0;
+      }
+    }
+
+    .l-helperWrapper-padded.l-required-padded {
+        padding-right: 30px;
+
+        .v-required-field-indicator{
+            right: 20px;
+        }
+    }
+}

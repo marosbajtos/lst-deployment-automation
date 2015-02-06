@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+  <security-domain>lspsRealm</security-domain>
+  <use-jboss-authorization>true</use-jboss-authorization>
+  <valve>
+    <class-name>org.jboss.as.web.security.ExtendedFormAuthenticator</class-name>
+    <param>
+      <param-name>includePassword</param-name>
+      <param-value>true</param-value>
+    </param>
+  </valve>
+</jboss-web>

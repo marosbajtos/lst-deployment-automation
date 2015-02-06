@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.document:Documents
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.document="http:///com/whitestein/lsps/modeler/document.ecore"
+    xmi:id="_3j2psK5PEeSsJdpZZuml9w"
+    newUI="true">
+  <docs
+      xmi:id="_31dXEK5PEeSsJdpZZuml9w"
+      name="DeploymentRunDetail">
+    <parameters
+        xmi:id="_55ymUK5PEeSsJdpZZuml9w"
+        name="runId"
+        parameterType="Integer"/>
+    <title><![CDATA["Deployment run detail"]]></title>
+    <uIDefinition>DeploymentRunDetail(findById(runId, type(DeploymentRun)))</uIDefinition>
+    <accessRights>runId != null</accessRights>
+  </docs>
+  <docs
+      xmi:id="_A53dMK5YEeSsJdpZZuml9w"
+      name="InitiateDeploymentDoc">
+    <title><![CDATA["Initiate deployment"]]></title>
+    <uIDefinition>InitiateDeployment()</uIDefinition>
+    <accessRights>true</accessRights>
+  </docs>
+  <docs
+      xmi:id="_EaCR8K5QEeSsJdpZZuml9w"
+      name="DeploymentsList">
+    <title><![CDATA["List of deployments"]]></title>
+    <uIDefinition>DeploymentRuns()</uIDefinition>
+    <accessRights>true</accessRights>
+  </docs>
+</com.whitestein.lsps.modeler.document:Documents>
