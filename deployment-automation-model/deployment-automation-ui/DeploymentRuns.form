@@ -43,6 +43,7 @@
           xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
           xmi:id="_TSCA8K5QEeSsJdpZZuml9w">
         <content>run.started</content>
+        <format>DATE_FORMAT</format>
       </content>
       <header><![CDATA["Started"]]></header>
     </columns>
@@ -52,6 +53,7 @@
           xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
           xmi:id="_UQFkoK5QEeSsJdpZZuml9w">
         <content>run.finished</content>
+        <format>DATE_FORMAT</format>
       </content>
       <header><![CDATA["Finished"]]></header>
     </columns>
@@ -60,7 +62,7 @@
       <content
           xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
           xmi:id="_VXG3EK5QEeSsJdpZZuml9w">
-        <content><![CDATA[run.success ? "Yes" : "No"]]></content>
+        <content><![CDATA[run.finished != null ? (run.success = true ? "Yes" : "No") : null]]></content>
       </content>
       <header><![CDATA["Success"]]></header>
     </columns>

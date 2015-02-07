@@ -36,7 +36,7 @@
     <parameters
         xmi:id="_LgLt4K5TEeSsJdpZZuml9w"
         name="command">
-      <valueExpression><![CDATA[["C:\deployment-automation\sample-command.bat", target]]]></valueExpression>
+      <valueExpression><![CDATA[["W:\lst-deployment-automation\sample-command.bat", target]]]></valueExpression>
     </parameters>
     <parameters
         xmi:id="_LgczoK5TEeSsJdpZZuml9w"
@@ -233,7 +233,15 @@
         source="_N-8SgK5XEeSsJdpZZuml9w"
         target="_2zc1ka5REeSsJdpZZuml9w">
       <children
-          xmi:id="_UmWEUa5XEeSsJdpZZuml9w"/>
+          xmi:id="_UmWEUa5XEeSsJdpZZuml9w">
+        <layoutConstraint
+            xsi:type="com.whitestein.lsps.modeler.diagram:ConnectionLabelLocation"
+            xmi:id="_157BAK5bEeSrtOOnSovLgQ"
+            sourceDimX="-211"
+            sourceDimY="-69"
+            targetDimX="211"
+            targetDimY="-72"/>
+      </children>
       <bendpoints
           xmi:id="_aFHaIK5XEeSsJdpZZuml9w"
           sourceDimY="-81"

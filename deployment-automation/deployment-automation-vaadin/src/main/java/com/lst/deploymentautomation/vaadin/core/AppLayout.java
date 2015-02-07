@@ -23,6 +23,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import com.lst.deploymentautomation.vaadin.core.NavigationMenu.NavigationCommand;
+import com.lst.deploymentautomation.vaadin.page.SettingsView;
+import com.lst.deploymentautomation.vaadin.page.TodoListView;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewDisplay;
@@ -37,12 +40,6 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.lst.deploymentautomation.vaadin.core.NavigationMenu.NavigationCommand;
-import com.lst.deploymentautomation.vaadin.page.DocumentsView;
-import com.lst.deploymentautomation.vaadin.page.RunModelView;
-import com.lst.deploymentautomation.vaadin.page.SettingsView;
-import com.lst.deploymentautomation.vaadin.page.TodoListView;
-import com.whitestein.lsps.engine.EngineRights;
 import com.whitestein.lsps.human.HumanRights;
 import com.whitestein.lsps.vaadin.util.UserInfo;
 
@@ -98,12 +95,15 @@ public class AppLayout extends CustomComponent implements ViewDisplay {
 		if (user.hasRight(HumanRights.READ_ALL_TODO) || user.hasRight(HumanRights.READ_OWN_TODO)) {
 			addViewItem(navigation, TodoListView.TITLE, TodoListView.ID, FontAwesome.LIST);
 		}
-		if (user.hasRight(HumanRights.ACCESS_DOCUMENTS)) {
+		/*if (user.hasRight(HumanRights.ACCESS_DOCUMENTS)) {
 			addViewItem(navigation, DocumentsView.TITLE, DocumentsView.ID, FontAwesome.FILE_TEXT_O);
 		}
 		if (user.hasRight(EngineRights.READ_MODEL) && user.hasRight(EngineRights.CREATE_MODEL_INSTANCE)) {
 			addViewItem(navigation, RunModelView.TITLE, RunModelView.ID, FontAwesome.CARET_SQUARE_O_RIGHT);
-		}
+		}*/
+
+		addNavigationCommandItem(navigation, "Initialize deployment", new NavigationMenu.OpenDocumentCommand(ui, "", "'deployment-automation-ui'::InitiateDeploymentDoc", null), FontAwesome.PLAY);
+		addNavigationCommandItem(navigation, "Deployments list", new NavigationMenu.OpenDocumentCommand(ui, "", "'deployment-automation-ui'::DeploymentsList", null), FontAwesome.LIST_OL);
 
 		//user menu
 		userMenu = new NavigationMenu();

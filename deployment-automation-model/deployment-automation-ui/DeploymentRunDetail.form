@@ -36,6 +36,7 @@
         <binding><![CDATA[&run.started]]></binding>
         <required></required>
         <label><![CDATA["Started"]]></label>
+        <format>DATE_FORMAT</format>
       </components>
       <components
           xsi:type="com.whitestein.lsps.modeler.form:NfdTextBox"
@@ -43,6 +44,7 @@
         <readonly>true</readonly>
         <binding><![CDATA[&run.finished]]></binding>
         <label><![CDATA["Finished"]]></label>
+        <format>DATE_FORMAT</format>
       </components>
       <components
           xsi:type="com.whitestein.lsps.modeler.form:NfdCheckBox"
@@ -103,6 +105,7 @@
                 xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
                 xmi:id="_kNM2sK5SEeSsJdpZZuml9w">
               <content>command.started</content>
+              <format>DATE_FORMAT</format>
             </content>
             <header><![CDATA["Started"]]></header>
           </columns>
@@ -112,6 +115,7 @@
                 xsi:type="com.whitestein.lsps.modeler.form:NfdOutputText"
                 xmi:id="_lNwUwK5SEeSsJdpZZuml9w">
               <content>command.finished</content>
+              <format>DATE_FORMAT</format>
             </content>
             <header><![CDATA["Finished"]]></header>
           </columns>

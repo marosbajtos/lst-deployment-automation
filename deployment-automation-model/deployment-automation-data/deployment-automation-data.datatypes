@@ -276,6 +276,7 @@
         xmi:id="_UVuvF65PEeSsJdpZZuml9w"
         name="commands"
         multiplicity="SET"
+        setOrderByColumnName="STARTED"
         lazy="true">
       <foreignKeys
           xmi:id="_UVuvGK5PEeSsJdpZZuml9w"

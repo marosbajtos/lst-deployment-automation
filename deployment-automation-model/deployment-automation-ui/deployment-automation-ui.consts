@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.func:ModuleConstants
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.func="http:///com/whitestein/lsps/modeler/func.ecore"
+    xmi:id="_WoIjoK5cEeSrtOOnSovLgQ">
+  <constants
+      xmi:id="_Ww8hYK5cEeSrtOOnSovLgQ"
+      name="DATE_FORMAT"
+      type="String">
+    <expression><![CDATA["dd-MM-yyyy HH:mm:ss"]]></expression>
+  </constants>
+</com.whitestein.lsps.modeler.func:ModuleConstants>
