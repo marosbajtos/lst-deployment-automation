@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>deployment-automation-model</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.whitestein.lsps.modeler.ui.gobpmnBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.whitestein.lsps.modeler.ui.gobpmnNature</nature>
+	</natures>
+</projectDescription>

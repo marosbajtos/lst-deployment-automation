@@ -1,6 +1,6 @@
 **/.classpath
 **/target
 **/eclipse-target
-**/.project
+deployment-automation/**/.project
 **/.settings
 .metadata
